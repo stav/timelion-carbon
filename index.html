@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="TimelionApp">
+  <head>
+    <title>Carbon Recovery Calendar</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="app.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+
+  <body>
+    <header>
+        <div class="hero-unit">
+            <div class="container">
+                <h1>Carbon Recovery Calendar</h1>
+                <p>An interactive timeline for what, when &amp; how Carbie is healing.</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Daily Log of the events that happened during Carbon's recovery,
+        basically what drugs he got when.</div>
+      <div class="panel-body">
+        <p>Carbie's femur found a car's bumper on the last day of May 2014, a
+        Saturday.  This log beings when he had his surgury, the following Monday,
+        June 2nd. </p>
+      </div>
+
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th> Day           </th>
+                  <th> date          </th>
+                  <th> Omeprazol     </th>
+                  <th> Clindamicina  </th>
+                  <th> Metronidazol  </th>
+                  <th> Enrofloxacina </th>
+                  <th> Rimadyl       </th>
+                  <th> Tramadol      </th>
+              </tr>
+          </thead>
+          <tbody ng-controller="TimeController as time">
+              <tr
+                ng-repeat="event in time.events"
+                ng-controller="EventController as E"
+                ng-init="E.init(event)">
+                  <td> {{$index + 1}} </td>
+                  <td> {{event[0] | date}} </td>
+                  <td ng-repeat="i in [0, 1, 2, 3, 4, 5]">
+                    <span ng-show="E.hasMeds(i)">
+                      <span
+                        class="label"
+                        ng-class="{'label-primary':E.getMed(i) > 0,'label-default':E.getMed(i) < 0}"
+                        ng-repeat="x in E.getMedsRange(i) track by $index"
+                      > {{E.med(i)}}
+                      </span>
+                    </span>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+
+    <footer>
+        <div class="hero-unit">
+            <div class="container">
+                <p>
+                <span class="label label-primary">Administered at home</span>
+                <span class="label label-default">Administered in the clinic</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+  </body>
+</html>
