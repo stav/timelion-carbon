@@ -1,3 +1,10 @@
+/*
+ * TimeLion - Carbon
+ *
+ * AngularJS implementation of a daily log.
+ *
+ * To do: relative dosage sizes for columns
+ */
 (function() {
   var app = angular.module('TimelionApp', []);
 
@@ -23,64 +30,84 @@
     this.getMedsRange = function(med) {
       return Array(Math.abs(this.getMed(med)));
     };
-    this.med = function(med) {
-      return '' + this._meds[med].dose + ' ' + this._meds[med].unit;
+    this.adminHome = function(med, batch) {
+      return this.getMed(med)[batch] > 0;
+    };
+    this.adminClinic = function(med, batch) {
+      return this.getMed(med)[batch] < 0;
+    };
+    this.med = function(med, dose) {
+      return '' + Math.abs(dose) + ' ' + this._meds[med].unit;
+    };
+  });
+
+  app.controller('MedController', function() {
+    this._meds = meds;
+
+    this.getMeds = function() {
+      var medicine_names = [];
+
+      for (var i = 0; i < this._meds.length; i++) {
+        medicine_names.push(this._meds[i].name);
+      };
+
+      return medicine_names;
     };
   });
 
   var events = [
-    [ '02 June', [ 0,   0,   0,   0,   0,  0 ] ],
-    [ '03 June', [ 0,   0,   0,   0,   0,  0 ] ],
-    [ '04 June', [ 0,   0,   0,   0,   0,  0 ] ],
-    [ '05 June', [ 0,   0,   0,   0,   0,  0 ] ],
-    [ '06 June', [ 1,   1,   2,   1,   4,  0 ] ],
-    [ '07 June', [ 1,   0,   2,   1,   4,  0 ] ],
-    [ '08 June', [-1,   0,  -2,  -1,  -4,  0 ] ],
-    [ '09 June', [-1,   0,  -2,  -1,  -4,  0 ] ],
-    [ '10 June', [ 1,   0,   2,   1,   4,  0 ] ],
-    [ '11 June', [ 1,   0,   2,   1,   4,  0 ] ],
-    [ '12 June', [ 1,   0,   2,   1,   4,  0 ] ],
-    [ '13 June', [ 1,   0,   2,   1,   4,  0 ] ],
-    [ '14 June', [ 1,   0,   2,   1,   4,  0 ] ],
-    [ '15 June', [ 1,   0,   2,   1,   4,  0 ] ],
-    [ '16 June', [ 1,   1,   1,   1,   1,  1 ] ],
-    [ '17 June', [ 1,   2,   0,   1,   2,  2 ] ],
-    [ '18 June', [ 1,   2,   0,   1,   2,  2 ] ],
-    [ '19 June', [ 1,   2,   0,   1,   2,  2 ] ],
-    [ '20 June', [ 1,   2,   0,   1,   2,  2 ] ],
-    [ 'end'    , [ 0,   0,   0,   0,   0,  0 ] ]
+    [ '02 June', [ [   0],   [   0     ],   [   0     ],   [   0],   [   0    ],   [  0    ],   [  0    ] ] ],
+    [ '03 June', [ [   0],   [   0     ],   [   0     ],   [   0],   [   0    ],   [  0    ],   [  0    ] ] ],
+    [ '04 June', [ [   0],   [   0     ],   [   0     ],   [   0],   [   0    ],   [  0    ],   [  0    ] ] ],
+    [ '05 June', [ [   0],   [   0     ],   [   0     ],   [   0],   [   0    ],   [  0    ],   [  0    ] ] ],
+    [ '06 June', [ [ 200],   [ 200     ],   [ 375, 375],   [ 4.5],   [ 100    ],   [  0    ],   [ 2, 2  ] ] ],
+    [ '07 June', [ [ 200],   [   0     ],   [ 375, 375],   [ 4.5],   [ 100    ],   [  0    ],   [ 4     ] ] ],
+    [ '08 June', [ [-200],   [   0     ],   [-375,-375],   [-4.5],   [-100    ],   [  0    ],   [  0    ] ] ],
+    [ '09 June', [ [-200],   [   0     ],   [-375, 375],   [-4.5],   [-100    ],   [  0    ],   [ 4     ] ] ],
+    [ '10 June', [ [ 200],   [   0     ],   [ 375, 375],   [ 4.5],   [ 100    ],   [  0    ],   [ 2, 3  ] ] ],
+    [ '11 June', [ [ 200],   [   0     ],   [ 375, 375],   [ 4.5],   [ 100    ],   [  0    ],   [ 3, 2  ] ] ],
+    [ '12 June', [ [ 200],   [   0     ],   [ 375, 375],   [ 4.5],   [ 100    ],   [  0    ],   [ 2, 4  ] ] ],
+    [ '13 June', [ [ 200],   [   0     ],   [ 375, 375],   [ 4.5],   [ 40, 40 ],   [  0    ],   [ 3, 3  ] ] ],
+    [ '14 June', [ [ 200],   [   0     ],   [ 375, 375],   [ 4.5],   [ 60, 40 ],   [  0    ],   [ 4     ] ] ],
+    [ '15 June', [ [ 200],   [   0     ],   [ 375, 375],   [ 4.5],   [ 50, 40 ],   [  0    ],   [ 4     ] ] ],
+    [ '16 June', [ [ 200],   [ 200     ],   [ 375     ],   [ 4.5],   [ 50, 25 ],   [ 20    ],   [ 3     ] ] ],
+    [ '17 June', [ [ 200],   [ 200, 200],   [   0     ],   [ 4.5],   [ 25, 25 ],   [ 20, 20],   [ 4     ] ] ],
+    [ '18 June', [ [ 200],   [ 200, 200],   [   0     ],   [ 4.5],   [ 25, 25 ],   [ 20, 20],   [4,2,2  ] ] ],
+    [ '19 June', [ [ 200],   [ 200, 200],   [   0     ],   [ 4.5],   [ 25, 25 ],   [ 20, 20],   [4,5    ] ] ],
+    [ '20 June', [ [ 200],   [ 200, 200],   [   0     ],   [ 4.5],   [   0    ],   [  0    ],   [4,4,4,2] ] ],
+    [ '21 June', [ [ 200],   [ 200, 200],   [   0     ],   [ 4.5],   [   0    ],   [  0    ],   [4,2    ] ] ],
+    [ 'end'    , [ [   0],   [   0     ],   [   0     ],   [   0],   [   0    ],   [  0    ],   [  0    ] ] ]
   ]
 
   var meds = [
     {
       name: 'Omeprazol',
-      dose: 200,
       unit: 'mg'
     },
     {
       name: 'Clindamicina',
-      dose: 200,
       unit: 'mg'
     },
     {
       name: 'Metronidazol',
-      dose: 375,
       unit: 'mg'
     },
     {
       name: 'Enrofloxacina',
-      dose: 4.5,
       unit: 'ml'
     },
     {
-      name: 'Rimadyl',
-      dose: 25,
+      name: 'Carprofen',
+      note: 'Sold as Rimadyl & Carproby',
       unit: 'mg'
     },
     {
       name: 'Tramadol',
-      dose: 20,
       unit: 'mg'
+    },
+    {
+      name: 'Cannabis',
+      unit: 'drops'
     },
     {}
   ]
