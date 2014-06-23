@@ -34,6 +34,7 @@
               <tr>
                   <th> Day           </th>
                   <th> Date          </th>
+                  <th> Clinic        </th>
                   <th ng-repeat="med in medCtrl.getMeds()"> {{med}} </th>
               </tr>
           </thead>
@@ -44,6 +45,7 @@
                 ng-init="E.init(event)">
                   <td> <em> {{$index + 1}} </em> </td>
                   <td> {{event[0] | date}} </td>
+                  <td> <span class="badge" ng-show="E.atClinic()"> {{E.getClinic()}} </span> </td>
                   <td ng-show="!E.hasMeds()" colspan="7"> {{E.getMeds()}} </td>
                   <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6]">
                     <span ng-show="E.hasDosage(i)">

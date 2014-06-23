@@ -25,10 +25,17 @@
       this.evnt = evnt;
     };
     this.getMeds = function() {
-      return this.evnt[1];
+      return this.evnt[2];
     };
     this.getMed = function(med) {
-      return this.getMeds()[med];
+      var meds = this.getMeds();
+      return meds.length > med ? meds[med] : [];
+    };
+    this.getClinic = function(med) {
+      return this.evnt[1];
+    };
+    this.atClinic = function(med) {
+      return this.evnt[1].length > 0;
     };
     this.hasMeds = function(med) {
       var meds = this.getMeds();
