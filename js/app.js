@@ -31,7 +31,11 @@
       return this.getMeds()[med];
     };
     this.hasMeds = function(med) {
-      return this.getMed(med) != 0;
+      var meds = this.getMeds();
+      return meds instanceof Array && meds.length > 0;
+    };
+    this.hasDosage = function(med) {
+      return this.getMed(med).length > 0;
     };
     this.getMedsRange = function(med) {
       return Array(Math.abs(this.getMed(med)));

@@ -44,8 +44,9 @@
                 ng-init="E.init(event)">
                   <td> <em> {{$index + 1}} </em> </td>
                   <td> {{event[0] | date}} </td>
-                  <td ng-repeat="i in [0, 1, 2, 3, 4, 5, 6]">
-                    <span ng-show="E.hasMeds(i)">
+                  <td ng-show="!E.hasMeds()" colspan="7"> {{E.getMeds()}} </td>
+                  <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6]">
+                    <span ng-show="E.hasDosage(i)">
                       <span
                         class="label"
                         ng-repeat="dose in E.getMed(i) track by $index"
