@@ -4,8 +4,6 @@
 (function() {
   var app = angular.module('TimelionApp', []);
 
-  var meds = [];
-
   app.controller('TimeController', ['$http', function($http) {
     var time = this;
     time.events = [];
@@ -15,7 +13,14 @@
     });
   }]);
 
-  app.controller('EventController', function() {
+  app.controller('EventController', ['$http', function($http) {
+    var store = this;
+    store.meds = [];
+
+    $http.get('js/meds.json').success(function(data) {
+      store.meds = data;
+    });
+
     this.init = function(evnt) {
       this.evnt = evnt;
     };
@@ -38,20 +43,24 @@
       return this.getMed(med)[batch] < 0;
     };
     this.med = function(med, dose) {
-      return '' + Math.abs(dose) + ' ' + meds[med].unit;
+      if (med in store.meds)
+        return '' + Math.abs(dose) + ' ' + store.meds[med].unit;
     };
-  });
+  }]);
 
   app.controller('MedController', ['$http', function($http) {
+    var store = this;
+    store.meds = [];
+
     $http.get('js/meds.json').success(function(data) {
-      meds = data;
+      store.meds = data;
     });
 
     this.getMeds = function() {
       var medicine_names = [];
 
-      for (var i = 0; i < meds.length; i++) {
-        medicine_names.push(meds[i].name);
+      for (var i = 0; i < store.meds.length; i++) {
+        medicine_names.push(store.meds[i].name);
       };
 
       return medicine_names;
