@@ -26,6 +26,18 @@
     },
     {
       "name": "Cannabis",
-      "unit": "drops"
+      "unit": "dr"
+    },
+    {
+      "name": "Curcuma",
+      "unit": "cap"
+    },
+    {
+      "name": "Bromelin",
+      "unit": "cap"
+    },
+    {
+      "name": "Ginger",
+      "unit": "cap"
     }
 ]

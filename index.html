@@ -46,8 +46,8 @@
                   <td> <em ng-show="$index > 1"> {{$index - 1}} </em> </td>
                   <td> {{event[0] | date}} </td>
                   <td> <span class="badge" ng-show="E.atClinic()" ng-repeat="person in E.getClinicVisitors()"> {{person}} </span> </td>
-                  <td ng-show="!E.hasMeds()" colspan="7"> {{E.getMeds()}} </td>
-                  <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6]">
+                  <td ng-show="!E.hasMeds()" colspan="10"> {{E.getMeds()}} </td>
+                  <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
                     <span ng-show="E.hasDosage(i)">
                       <span
                         class="label"
@@ -68,6 +68,7 @@
                 <p>
                   <span class="label label-primary">Administered at home</span>
                   <span class="label label-default">Administered in the clinic</span>
+                  Tuxtla:
                   <span class="badge">C</span>Carbon
                   <span class="badge">Z</span>Zosia
                   <span class="badge">A</span>Aga
@@ -89,6 +90,12 @@
                   Notes for <strong>June 2nd - 5th</strong>: Probably he got
                       some hard-core opiates in the Clinic but we are not sure
                       what he got actually.
+                </p>
+                <p class="alert alert-info">
+                  <span class="glyphicon glyphicon-hand-right"></span>
+                  Notes for <strong>June 23rd</strong>: Received 1 ml of
+                  Xilacina (Xylazine sold as Rompun by Bayer) in Marina's
+                  clinic to calm him for his X-ray.
                 </p>
             </div>
         </div>
