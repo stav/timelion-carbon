@@ -25,7 +25,7 @@
         basically what drugs he got when.</div>
       <div class="panel-body">
         <p>Carbie's femur found a car's bumper on the last day of May 2014, a
-        Saturday.  This log beings when he had his surgury, the following Monday,
+        Saturday.  This log beings when he had his surgery, the following Monday,
         June 2nd. </p>
       </div>
 
@@ -43,9 +43,9 @@
                 ng-repeat="event in time.events"
                 ng-controller="EventController as E"
                 ng-init="E.init(event)">
-                  <td> <em> {{$index + 1}} </em> </td>
+                  <td> <em ng-show="$index > 1"> {{$index - 1}} </em> </td>
                   <td> {{event[0] | date}} </td>
-                  <td> <span class="badge" ng-show="E.atClinic()"> {{E.getClinic()}} </span> </td>
+                  <td> <span class="badge" ng-show="E.atClinic()" ng-repeat="person in E.getClinicVisitors()"> {{person}} </span> </td>
                   <td ng-show="!E.hasMeds()" colspan="7"> {{E.getMeds()}} </td>
                   <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6]">
                     <span ng-show="E.hasDosage(i)">
@@ -68,6 +68,11 @@
                 <p>
                   <span class="label label-primary">Administered at home</span>
                   <span class="label label-default">Administered in the clinic</span>
+                  <span class="badge">C</span>Carbon
+                  <span class="badge">Z</span>Zosia
+                  <span class="badge">A</span>Aga
+                  <span class="badge">R</span>Rocio
+                  <span class="badge">S</span>Steven
                 </p>
                 <p class="alert alert-info">
                   <span class="glyphicon glyphicon-hand-right"></span>

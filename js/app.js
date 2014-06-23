@@ -31,8 +31,8 @@
       var meds = this.getMeds();
       return meds.length > med ? meds[med] : [];
     };
-    this.getClinic = function(med) {
-      return this.evnt[1];
+    this.getClinicVisitors = function(med) {
+      return this.evnt[1].split('');
     };
     this.atClinic = function(med) {
       return this.evnt[1].length > 0;
