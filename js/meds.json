@@ -1,0 +1,31 @@
+[
+    {
+      "name": "Omeprazol",
+      "unit": "mg"
+    },
+    {
+      "name": "Clindamicina",
+      "unit": "mg"
+    },
+    {
+      "name": "Metronidazol",
+      "unit": "mg"
+    },
+    {
+      "name": "Enrofloxacina",
+      "unit": "ml"
+    },
+    {
+      "name": "Carprofen",
+      "note": "Sold as Rimadyl & Carproby",
+      "unit": "mg"
+    },
+    {
+      "name": "Tramadol",
+      "unit": "mg"
+    },
+    {
+      "name": "Cannabis",
+      "unit": "drops"
+    }
+]
