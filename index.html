@@ -3,7 +3,6 @@
   <head>
     <title>Carbon Recovery Calendar</title>
     <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/app.css" />
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
@@ -45,14 +44,14 @@
                 ng-init="E.init(event)">
                   <td> <em ng-show="$index > 1"> {{$index - 1}} </em> </td>
                   <td> {{event[0] | date}} </td>
-                  <td> <span class="badge" ng-show="E.atClinic()" ng-repeat="person in E.getClinicVisitors()"> {{person}} </span> </td>
+                  <td> <span class="badge miceli" ng-show="E.atClinic()" ng-repeat="person in E.getClinicVisitors()"> {{person}} </span> </td>
                   <td ng-show="!E.hasMeds()" colspan="10"> {{E.getMeds()}} </td>
                   <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
                     <span ng-show="E.hasDosage(i)">
                       <span
                         class="label"
                         ng-repeat="dose in E.getMed(i) track by $index"
-                        ng-class="{'label-primary':E.adminHome(i, $index),'label-default':E.adminClinic(i, $index)}">
+                        ng-class="{'label-primary':E.adminHome(i, $index),'label-default miceli':E.adminClinic(i, $index)}">
                           {{E.med(i, dose)}}
                       </span>
                     </span>
@@ -66,14 +65,17 @@
         <div class="hero-unit">
             <div class="container">
                 <p>
-                  <span class="label label-primary">Administered at home</span>
-                  <span class="label label-default">Administered in the clinic</span>
-                  Tuxtla:
-                  <span class="badge">C</span>Carbon
-                  <span class="badge">Z</span>Zosia
-                  <span class="badge">A</span>Aga
-                  <span class="badge">R</span>Rocio
-                  <span class="badge">S</span>Steven
+                  <span class="label label-primary">Zosia</span>
+                  <span class="label label-default miceli">Miceli</span>
+                  <span class="badge miceli">C</span>Carbon
+                  <span class="badge miceli">Z</span>Zosia
+                  <span class="badge miceli">A</span>Aga
+                  <span class="badge miceli">R</span>Rocio
+                  <span class="badge miceli">S</span>Steven
+                  <span class="label label-default marina">Marina</span>
+                  <span class="badge marina">C</span>Carbon
+                  <span class="badge marina">Z</span>Zosia
+                  <span class="badge marina">S</span>Steven
                 </p>
                 <p class="alert alert-info">
                   <span class="glyphicon glyphicon-hand-right"></span>
