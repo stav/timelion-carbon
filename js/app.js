@@ -4,21 +4,29 @@
 (function() {
   angular.module('TimelionCarbonApp', [])
 
-  .controller('TimeController', ['$http', function($http) {
-    var time = this;
-    time.events = [];
+  .factory('EventsDataService', function($http) {
+    return $http({method: 'GET', url: 'js/events.json'});
+  })
 
-    $http.get('js/events.json').success(function(data) {
-      time.events = data;
+  .factory('MedsDataService', function($http) {
+    return $http({method: 'GET', url: 'js/meds.json'});
+  })
+
+  .controller('TimeController', function(EventsDataService) {
+    var store = this;
+    store.events = [];
+
+    EventsDataService.then(function(result) {
+      store.events = result.data;
     });
-  }])
+  })
 
-  .controller('EventController', ['$http', function($http) {
+  .controller('EventController', function(MedsDataService) {
     var store = this;
     store.meds = [];
 
-    $http.get('js/meds.json').success(function(data) {
-      store.meds = data;
+    MedsDataService.then(function(result) {
+      store.meds = result.data;
     });
 
     this.init = function(evnt) {
@@ -52,14 +60,14 @@
       if (med in store.meds)
         return '' + Math.abs(dose) + ' ' + store.meds[med].unit;
     };
-  }])
+  })
 
-  .controller('MedController', ['$http', function($http) {
+  .controller('MedController', function(MedsDataService) {
     var store = this;
     store.meds = [];
 
-    $http.get('js/meds.json').success(function(data) {
-      store.meds = data;
+    MedsDataService.then(function(result) {
+      store.meds = result.data;
     });
 
     this.getMeds = function() {
@@ -71,6 +79,6 @@
 
       return medicine_names;
     };
-  }]);
+  });
 
 })();
