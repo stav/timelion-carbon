@@ -26,18 +26,18 @@
     },
     {
       "name": "Cannabis",
-      "unit": "dr"
+      "unit": "d"
     },
     {
       "name": "Curcuma",
-      "unit": "cap"
+      "unit": "c"
     },
     {
-      "name": "Bromelin",
-      "unit": "cap"
+      "name": "Bromelain",
+      "unit": "c"
     },
     {
       "name": "Ginger",
-      "unit": "cap"
+      "unit": "c"
     }
 ]

@@ -43,9 +43,12 @@
                 ng-controller="EventController as E"
                 ng-init="E.init(event)">
                   <td> <em ng-show="$index > 1"> {{$index - 1}} </em> </td>
-                  <td> {{event[0] | date}} </td>
-                  <td> <span class="badge miceli" ng-show="E.atClinic()" ng-repeat="person in E.getClinicVisitors()"> {{person}} </span> </td>
-                  <td ng-show="!E.hasMeds()" colspan="10"> {{E.getMeds()}} </td>
+                  <td> {{event.date | date}} </td>
+                  <td>
+                    <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)"> {{person}} </span>
+                    <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)"> {{person}} </span>
+                  </td>
+                  <td ng-show="!E.hasMeds()" colspan="10"> {{event.notes}} </td>
                   <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
                     <span ng-show="E.hasDosage(i)">
                       <span
