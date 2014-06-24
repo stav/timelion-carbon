@@ -24,12 +24,8 @@
     this.init = function(evnt) {
       this.evnt = evnt;
     };
-    this.getMeds = function() {
-      return this.evnt.meds;
-    };
     this.getMed = function(med) {
-      var meds = this.getMeds();
-      return meds.length > med ? meds[med] : [];
+      return this.evnt.meds.length > med ? this.evnt.meds[med] : [];
     };
     this.getClinicVisitors = function(clinic) {
       return this.evnt.clinic[clinic].split('');
@@ -37,9 +33,8 @@
     this.atClinic = function(clinic) {
       return this.evnt.clinic[clinic].length > 0;
     };
-    this.hasMeds = function(med) {
-      var meds = this.getMeds();
-      return meds instanceof Array && meds.length > 0;
+    this.hasMeds = function() {
+      return this.evnt.meds instanceof Array && this.evnt.meds.length > 0;
     };
     this.hasDosage = function(med) {
       return this.getMed(med).length > 0;
