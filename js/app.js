@@ -2,18 +2,18 @@
  * AngularJS implementation of a daily log.
  */
 (function() {
-  var app = angular.module('TimelionApp', []);
+  angular.module('TimelionCarbonApp', [])
 
-  app.controller('TimeController', ['$http', function($http) {
+  .controller('TimeController', ['$http', function($http) {
     var time = this;
     time.events = [];
 
     $http.get('js/events.json').success(function(data) {
       time.events = data;
     });
-  }]);
+  }])
 
-  app.controller('EventController', ['$http', function($http) {
+  .controller('EventController', ['$http', function($http) {
     var store = this;
     store.meds = [];
 
@@ -52,9 +52,9 @@
       if (med in store.meds)
         return '' + Math.abs(dose) + ' ' + store.meds[med].unit;
     };
-  }]);
+  }])
 
-  app.controller('MedController', ['$http', function($http) {
+  .controller('MedController', ['$http', function($http) {
     var store = this;
     store.meds = [];
 
