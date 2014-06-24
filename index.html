@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="TimelionCarbonApp">
   <head>
-    <title>Carbon Recovery Calendar</title>
-    <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <title> Carbon Recovery Calendar </title>
+    <link rel="icon" href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
   </head>
@@ -12,8 +12,8 @@
     <header>
         <div class="hero-unit">
             <div class="container">
-                <h1>Carbon Recovery Calendar</h1>
-                <p>An interactive timeline for what, when &amp; how Carbie is healing.</p>
+                <h1> Carbon Recovery Calendar </h1>
+                <p> A time-line for what, when &amp; how Carbie is healing. </p>
             </div>
         </div>
     </header>
@@ -23,7 +23,7 @@
         Daily Log of the events that happened during Carbon's recovery,
         basically what drugs he got when.</div>
       <div class="panel-body">
-        <p>Carbie's femur found a car's bumper on the last day of May 2014, a
+        <p> Carbie's femur found a car's bumper on the last day of May 2014, a
         Saturday.  This log beings when he had his surgery, the following Monday,
         June 2nd. </p>
       </div>
@@ -34,7 +34,7 @@
                   <th> Day           </th>
                   <th> Date          </th>
                   <th> Clinic        </th>
-                  <th ng-repeat="med in medCtrl.getMeds()"> {{med}} </th>
+                  <th ng-repeat="med in medCtrl.getMeds()" ng-bind="med"></th>
               </tr>
           </thead>
           <tbody ng-controller="TimeController as time">
@@ -43,18 +43,18 @@
                 ng-controller="EventController as E"
                 ng-init="E.init(event)">
                   <td> <em ng-show="$index > 1"> {{$index - 1}} </em> </td>
-                  <td> {{event.date | date}} </td>
+                  <td ng-bind="event.date"></td>
                   <td>
-                    <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)"> {{person}} </span>
-                    <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)"> {{person}} </span>
+                    <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
+                    <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
                   </td>
-                  <td ng-show="!E.hasMeds()" colspan="10"> {{event.notes}} </td>
+                  <td ng-show="!E.hasMeds()" colspan="10" ng-bind="event.notes"></td>
                   <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
                     <span ng-show="E.hasDosage(i)">
                       <span
                         class="label"
                         ng-repeat="dose in E.getMed(i) track by $index"
-                        ng-class="{'label-primary':E.adminHome(i, $index),'label-default miceli':E.adminClinic(i, $index)}">
+                        ng-class="{'label-primary':E.observed(i, $index),'label-default':E.unobserved(i, $index)}">
                           {{E.med(i, dose)}}
                       </span>
                     </span>
@@ -68,14 +68,16 @@
         <div class="hero-unit">
             <div class="container">
                 <p>
-                  <span class="label label-primary">Zosia</span>
-                  <span class="label label-default miceli">Miceli</span>
+                  <span class="label label-primary">Zosia observed</span>
+                  <span class="label label-default">Zosia did not observe</span>
+                  Visits to clinics
+                  <span class="badge miceli">Miceli</span>:
                   <span class="badge miceli">C</span>Carbon
                   <span class="badge miceli">Z</span>Zosia
                   <span class="badge miceli">A</span>Aga
                   <span class="badge miceli">R</span>Rocio
                   <span class="badge miceli">S</span>Steven
-                  <span class="label label-default marina">Marina</span>
+                  <span class="badge marina">Marina</span>:
                   <span class="badge marina">C</span>Carbon
                   <span class="badge marina">Z</span>Zosia
                   <span class="badge marina">S</span>Steven
