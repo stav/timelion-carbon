@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="TimelionCarbonApp">
+<html lang="en" ng-app="TimelionCarbonApp">
   <head>
+  <meta charset="utf-8">
     <title> Carbon Recovery Calendar </title>
     <link rel="icon" href="favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="css/app.css"/>
@@ -29,17 +30,17 @@
       </div>
 
       <table class="table table-striped">
-          <thead ng-controller="MedController as medCtrl">
+          <thead ng-controller="MedController">
               <tr>
                   <th> Day           </th>
                   <th> Date          </th>
                   <th> Clinic        </th>
-                  <th ng-repeat="med in medCtrl.getMeds()" ng-bind="med"></th>
+                  <th ng-repeat="med in getAllMedNames()" ng-bind="med"></th>
               </tr>
           </thead>
-          <tbody ng-controller="TimeController as time">
+          <tbody ng-controller="TimeController">
               <tr
-                ng-repeat="event in time.events"
+                ng-repeat="event in events"
                 ng-controller="EventController as E"
                 ng-init="E.init(event)">
                   <td> <em ng-show="$index > 1"> {{$index - 1}} </em> </td>
@@ -100,9 +101,11 @@
                 </p>
                 <p class="alert alert-info">
                   <span class="glyphicon glyphicon-hand-right"></span>
-                  Notes for <strong>June 23rd</strong>: Received 1 ml of
-                  Xilacina (Xylazine sold as Rompun by Bayer) in Marina's
-                  clinic to calm him for his X-ray.
+                  Notes for <strong>June 23rd</strong>: Received 1 ml of Xilacina
+                  (Xylazine sold as Rompun by Bayer) in Marina's clinic to calm
+                  him for his X-ray.  Even though he was sedated he still fought
+                  like hell to not allow us to turn him upside down, which might
+                  have contributed to the hip joint noise becoming very ould now.
                 </p>
             </div>
         </div>

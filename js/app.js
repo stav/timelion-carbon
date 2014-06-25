@@ -14,12 +14,11 @@
     return $http({method: 'GET', url: 'js/meds.json'});
   }).
 
-  controller('TimeController', function (EventsDataService) {
-    var store = this;
-    store.events = [];
+  controller('TimeController', function ($scope, EventsDataService) {
+    $scope.events = [];
 
-    EventsDataService.then(function (result) {
-      store.events = result.data;
+    EventsDataService.success(function (data) {
+      $scope.events = data;
     });
   }).
 
@@ -64,23 +63,16 @@
     };
   }).
 
-  controller('MedController', function (MedsDataService) {
-    var store = this;
-    store.meds = [];
+  controller('MedController', function ($scope, MedsDataService) {
+    $scope.medicine_names = [];
 
-    MedsDataService.then(function (result) {
-      store.meds = result.data;
-    });
+    MedsDataService.success(function (data) {
+      meds = data;
 
-    this.getMeds = function () {
-      var medicine_names = [];
-
-      for (var i = 0; i < store.meds.length; i++) {
-        medicine_names.push(store.meds[i].name);
+      for (var i = 0; i < meds.length; i++) {
+        $scope.medicine_names.push(meds[i].name);
       };
-
-      return medicine_names;
-    };
+    });
   });
 
 })();
