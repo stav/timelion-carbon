@@ -1,7 +1,7 @@
 [
  {"date": "31 May" , "clinic": [""   , ""   ], "meds": [], "notes": "Se encuentrO" },
  {"date": "01 June", "clinic": [""   , ""   ], "meds": [], "notes": ""             },
- {"date": "02 June", "clinic": ["C"  , ""   ], "meds": [], "notes": "Surgery"      },
+ {"date": "02 June", "clinic": ["CZ" , ""   ], "meds": [], "notes": "Surgery"      },
  {"date": "03 June", "clinic": ["C"  , ""   ], "meds": [], "notes": ""             },
  {"date": "04 June", "clinic": ["C"  , ""   ], "meds": [], "notes": ""             },
  {"date": "05 June", "clinic": ["CZA", ""   ], "meds": [], "notes": ""             },

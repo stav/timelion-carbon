@@ -66,9 +66,7 @@
   controller('MedController', function ($scope, MedsDataService) {
     $scope.medicine_names = [];
 
-    MedsDataService.success(function (data) {
-      meds = data;
-
+    MedsDataService.success(function (meds) {
       for (var i = 0; i < meds.length; i++) {
         $scope.medicine_names.push(meds[i].name);
       };
