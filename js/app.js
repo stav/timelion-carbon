@@ -63,14 +63,19 @@
     };
   }).
 
-  controller('MedController', function ($scope, MedsDataService) {
-    $scope.medicine_names = [];
+  controller('MedController', function ($scope, $http, MedsDataService) {
+    $scope.meds = [];
 
-    MedsDataService.success(function (meds) {
-      for (var i = 0; i < meds.length; i++) {
-        $scope.medicine_names.push(meds[i].name);
-      };
+    MedsDataService.success(function (data) {
+      $scope.meds = data; //.splice(0, 1);
     });
+  }).
+
+  directive('bsPopover', function () {
+    return function ($scope, element, attrs) {
+      jQuery("[data-toggle='popover']").popover();
+      jQuery("[data-toggle='tooltip']").tooltip();
+    };
   });
 
 })();

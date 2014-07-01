@@ -1,32 +1,67 @@
 [
     {
       "name": "Omeprazol",
-      "unit": "mg"
+      "engl": "Omeprazole",
+      "unit": "mg",
+      "pron": "/oʊˈmɛprəzoʊl/",
+      "bran": "Antra, Aspra, Gastroloc, Losectil, Lozeprel, Mopral, Omepral, Omez, Opal, Ozid, Rome 20, Prilosec, Losec, Ulcozol, Segazole, Zegacid, Zegerid",
+      "link": "http://en.wikipedia.org/wiki/Omeprazole",
+      "html": "A proton pump inhibitor used in the treatment of dyspepsia, peptic ulcer disease, gastroesophageal reflux disease, laryngopharyngeal reflux, and Zollinger–Ellison syndrome. One of the most widely prescribed drugs internationally and is available over-the-counter in some countries."
     },
     {
       "name": "Clindamicina",
-      "unit": "mg"
+      "engl": "Clindamycin",
+      "unit": "mg",
+      "pron": "/klɪndəˈmaɪsɨn/",
+      "bran": "Cleocin / Cleocin Phosphate",
+      "link": "http://www.merckmanuals.com/professional/lexicomp/clindamycin%20%28systemic%29.html",
+      "html": "An <u>antibiotic</u> useful for the treatment of a number of infections. It is of the lincosamide class. It is usually used to treat infections with <u>anaerobic bacteria</u>, but can also be used to treat some protozoal diseases, such as malaria. It is a common topical treatment for acne and can be useful against some methicillin-resistant Staphylococcus aureus (MRSA) infections."
     },
     {
       "name": "Metronidazol",
-      "unit": "mg"
+      "engl": "Metronidazole",
+      "unit": "mg",
+      "pron": "/mɛtrəˈnaɪdəzoʊl/",
+      "bran": "Flagyl, Filmet",
+      "link": "http://en.wikipedia.org/wiki/Metronidazole",
+      "html": "A nitroimidazole antibiotic medication used particularly for anaerobic bacteria and protozoa. Metronidazole is an antibacterial against anaerobic organisms, amoebicide and antiprotozoal. <p>A nitroimidazole antibiotic medication used particularly for anaerobic bacteria and protozoa. Metronidazole is an antibacterial against anaerobic organisms, amoebicide and antiprotozoal."
     },
     {
       "name": "Enrofloxacina",
-      "unit": "ml"
+      "engl": "Enrofloxacin",
+      "unit": "ml",
+      "pron": "C19H22FN3O3",
+      "bran": "Baytril (the Bayer Corporation)",
+      "link": "http://en.wikipedia.org/wiki/Enrofloxacin",
+      "html": "A fluoroquinolone antibiotic used for the treatment of pets and domestic animals. Fluoroquinolones such as ciprofloxacin are widely used in the treatment of human disease."
     },
     {
       "name": "Carprofen",
       "note": "Sold as Rimadyl & Carproby",
-      "unit": "mg"
+      "engl": "Carprofen",
+      "unit": "mg",
+      "pron": "C15H12ClNO2",
+      "bran": "Vetprofen, Rimadyl, Imadyl, Novox, Imafen, Rovera",
+      "link": "http://en.wikipedia.org/wiki/Carprofen",
+      "html": "A non-steroidal anti-inflammatory drug that veterinarians prescribe as a supportive treatment for various conditions. It provides day-to-day treatment for pain and inflammation from arthritis in geriatric dogs, joint pain, osteoarthritis, hip dysplasia, and other forms of joint deterioration. <p>It is also used to relieve short-term post-operative pain, inflammation, and swelling after spaying, neutering, and other procedures. Carprofen reduces inflammation by inhibition of COX-2 and other sources of inflammatory prostaglandins. This is targeted protection, in that it does not interfere with COX-1 activity."
     },
     {
       "name": "Tramadol",
-      "unit": "mg"
+      "engl": "Tramadol",
+      "unit": "mg",
+      "pron": "C16H25NO2",
+      "bran": "Tramadol by Grünenthal GmbH in Germany, Ryzolt, Tramal, Ultram, the hydrochloride salt by Janssen Pharmaceutica as Ultram in the United States, Ralivia by Biovail in Canada",
+      "link": "http://en.wikipedia.org/wiki/Tramadol",
+      "html": "A centrally-acting atypical opioid analgesic with additional serotonin-norepinephrine reuptake-inhibiting effects used to treat moderate to moderately severe pain."
     },
     {
       "name": "Cannabis",
-      "unit": "d"
+      "engl": "Hemp",
+      "unit": "d",
+      "pron": "ˈkænəbɪs",
+      "bran": "Cannabis sativa (L.) <li>Cannabis indica (Lam.) <li>Cannabis ruderalis (Janisch)",
+      "link": "http://www.cannabis-med.org/index.php?tpl=cannabinoidslist&lng=en",
+      "html": ""
     },
     {
       "name": "Curcuma",
