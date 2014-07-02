@@ -1,1 +1,65 @@
-<p>This is the partial for view 1.</p>
+<section class="panel panel-default">
+  <div class="panel-heading">
+    Daily Log of the events that happened during Carbon's recovery,
+    basically what drugs he got when.</div>
+  <div class="panel-body">
+    <p> Carbie's femur found a car's bumper on the last day of May 2014, a
+    Saturday.  This log beings when he had his surgery, the following Monday,
+    June 2nd. </p>
+  </div>
+
+  <table class="table table-striped">
+    <thead ng-controller="tHeadController">
+      <tr>
+          <th> Day    </th>
+          <th> Date   </th>
+          <th> Clinic </th>
+          <th
+            ng-repeat="value in values"
+            bs-popover
+            ><span
+              data-container="th"
+              data-original-title="{{value.engl}}"
+              data-placement="top"
+              data-toggle="tooltip"
+              ><button
+                type="button"
+                class="btn btn-default"
+                data-container="th"
+                data-content="<p>{{value.pron}}</p><ul><li><value>{{value.bran}}</value></ul><p>{{value.html}}</p>"
+                data-html="true"
+                data-original-title="<h2><a href='{{value.link}}'>{{value.engl}}</a></h2>"
+                data-placement="bottom"
+                data-toggle="popover"
+                ng-bind="value.name"
+              ></button>
+            </span>
+          </th>
+      </tr>
+    </thead>
+    <tbody ng-controller="tBodyController">
+      <tr
+        ng-repeat="event in events"
+        ng-controller="EventController as E"
+        ng-init="E.init(event)">
+          <td> <em ng-show="$index > 1"> {{$index - 1}} </em> </td>
+          <td ng-bind="event.date"></td>
+          <td>
+            <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
+            <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
+          </td>
+          <td ng-show="!E.hasMeds()" colspan="10" ng-bind="event.notes"></td>
+          <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
+            <span ng-show="E.hasDosage(i)">
+              <span
+                class="label"
+                ng-repeat="dose in E.getMed(i) track by $index"
+                ng-class="{'label-primary':E.observed(i, $index),'label-default':E.unobserved(i, $index)}">
+                  {{E.med(i, dose)}}
+              </span>
+            </span>
+          </td>
+      </tr>
+  </tbody>
+</table>
+</section>

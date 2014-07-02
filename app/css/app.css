@@ -28,3 +28,20 @@
   content: "";
   padding: 0;
 }
+
+/* #SMA */
+@import url("bootstrap.css");
+
+section.panel {
+  margin-left: 37px;
+}
+
+.miceli {
+  background-color: green;
+}
+.marina {
+  background-color: cyan;
+}
+#plug {
+  text-align: center;
+}

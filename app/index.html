@@ -11,26 +11,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css"/>
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
-
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+  <header>
+    <div class="hero-unit">
+      <div class="container">
+        <h1> Carbon Recovery Calendar </h1>
+        <p> A time-line for what, when &amp; how Carbie is healing. </p>
+      </div>
+    </div>
+  </header>
 
   <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <footer>
+    <div class="hero-unit">
+      <div class="container">
+        <p>
+         <span class="label label-primary">Zosia observed</span>
+         <span class="label label-default">Zosia did not observe</span>
+         Visits to clinics
+         <span class="badge miceli">Miceli</span>:
+         <span class="badge miceli">C</span>Carbon
+         <span class="badge miceli">Z</span>Zosia
+         <span class="badge miceli">A</span>Aga
+         <span class="badge miceli">R</span>Rocio
+         <span class="badge miceli">S</span>Steven
+         <span class="badge marina">Marina</span>:
+         <span class="badge marina">C</span>Carbon
+         <span class="badge marina">Z</span>Zosia
+         <span class="badge marina">S</span>Steven
+        </p>
+        <p class="alert alert-info">
+         <span class="glyphicon glyphicon-hand-right"></span>
+         Notes on <strong>Cannabis</strong>: dosage before June
+           18th is estimated.
+        </p>
+        <p class="alert alert-info">
+         <span class="glyphicon glyphicon-hand-right"></span>
+         Notes on <strong>Carprofen</strong>: Rimadyl used except for
+           June 13-16 when he got Carprobay from Bayer.
+        </p>
+        <p class="alert alert-info">
+         <span class="glyphicon glyphicon-hand-right"></span>
+         Notes for <strong>June 2nd - 5th</strong>: Probably he got
+           some hard-core opiates in the Clinic but we are not sure
+           what he got actually.
+        </p>
+        <p class="alert alert-info">
+         <span class="glyphicon glyphicon-hand-right"></span>
+         Notes for <strong>June 23rd</strong>: Received 1 ml of Xilacina
+         (Xylazine sold as Rompun by Bayer) in Marina's clinic to calm
+         him for his X-ray. Even though he was sedated he still fought
+         like hell to not allow us to turn him upside down, which might
+         have contributed to the hip joint noise becoming very ould now.
+        </p>
+        <ul class="menu">
+          <li><a href="#/view1">view1</a></li>
+          <li><a href="#/view2">view2</a></li>
+        </ul>
+        <div id="plug">Angular seed app: v<span app-version></span></div>
+      </div>
+    </div>
+  </footer>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="js/app.js"></script>
