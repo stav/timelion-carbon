@@ -32,37 +32,36 @@
       </div>
 
       <table class="table table-striped">
-          <thead ng-controller="MedController">
+          <thead ng-controller="tHeadController">
               <tr
               >
                   <th> Day    </th>
                   <th> Date   </th>
                   <th> Clinic </th>
                   <th
-                    ng-repeat="med in meds"
+                    ng-repeat="value in values"
                     bs-popover
                     ><span
                       data-container="th"
-                      data-original-title="{{med.engl}}"
+                      data-original-title="{{value.engl}}"
                       data-placement="top"
                       data-toggle="tooltip"
                       ><button
                         type="button"
                         class="btn btn-default"
                         data-container="th"
-                        data-content="<p>{{med.pron}}</p><ul><li><i>{{med.bran}}</i></ul><p>{{med.html}}</p>"
+                        data-content="<p>{{value.pron}}</p><ul><li><value>{{value.bran}}</value></ul><p>{{value.html}}</p>"
                         data-html="true"
-                        data-original-title="<h2><a href='{{med.link}}'>{{med.engl}}</a></h2>"
+                        data-original-title="<h2><a href='{{value.link}}'>{{value.engl}}</a></h2>"
                         data-placement="bottom"
                         data-toggle="popover"
-                        ng-bind="med.name"
+                        ng-bind="value.name"
                       ></button>
                     </span>
-                    <!-- <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button> -->
                   </th>
               </tr>
           </thead>
-          <tbody ng-controller="TimeController">
+          <tbody ng-controller="tBodyController">
               <tr
                 ng-repeat="event in events"
                 ng-controller="EventController as E"

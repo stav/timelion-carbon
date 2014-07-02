@@ -11,10 +11,10 @@
   }).
 
   factory('MedsDataService', function ($http) {
-    return $http({method: 'GET', url: 'js/meds.json'});
+    return $http({method: 'GET', url: 'js/values.json'});
   }).
 
-  controller('TimeController', function ($scope, EventsDataService) {
+  controller('tBodyController', function ($scope, EventsDataService) {
     $scope.events = [];
 
     EventsDataService.success(function (data) {
@@ -24,17 +24,17 @@
 
   controller('EventController', function (MedsDataService) {
     var store = this;
-    store.meds = [];
+    store.values = [];
 
     MedsDataService.then(function (result) {
-      store.meds = result.data;
+      store.values = result.data;
     });
 
     this.init = function (event) {
       this.event = event;
     };
     this.getMed = function (med) {
-      return this.event.meds.length > med ? this.event.meds[med] : [];
+      return this.event.values.length > med ? this.event.values[med] : [];
     };
     this.getClinicVisitors = function (clinic) {
       return this.event.clinic[clinic].split('');
@@ -43,7 +43,7 @@
       return this.event.clinic[clinic].length > 0;
     };
     this.hasMeds = function () {
-      return this.event.meds instanceof Array && this.event.meds.length > 0;
+      return this.event.values instanceof Array && this.event.values.length > 0;
     };
     this.hasDosage = function (med) {
       return this.getMed(med).length > 0;
@@ -58,16 +58,16 @@
       return this.getMed(med)[batch] < 0;
     };
     this.med = function (med, dose) {
-      if (med in store.meds)
-        return '' + Math.abs(dose) + ' ' + store.meds[med].unit;
+      if (med in store.values)
+        return '' + Math.abs(dose) + ' ' + store.values[med].unit;
     };
   }).
 
-  controller('MedController', function ($scope, $http, MedsDataService) {
-    $scope.meds = [];
+  controller('tHeadController', function ($scope, $http, MedsDataService) {
+    $scope.values = [];
 
     MedsDataService.success(function (data) {
-      $scope.meds = data; //.splice(0, 1);
+      $scope.values = data; //.splice(0, 1);
     });
   }).
 
