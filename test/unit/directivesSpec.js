@@ -24,7 +24,7 @@ describe('directives', function() {
   describe('bs-popover', function() {
 
     it('makes sure there are some popovers to popover', function() {
-      console.log('Hello people');
+      // console.log('Hello people');
     });
   });
 

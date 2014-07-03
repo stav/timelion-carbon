@@ -31,7 +31,7 @@
  {"date": "29 June", "clinic": ["C"  , ""   ], "values": [], "notes": "" },
  {"date": "30 June", "clinic": ["C"  , ""   ], "values": [ [         ],   [         ],   [         ],   [    ],   [        ],   [       ],   [       ],   [         ],   [          ],   [        ] ], "notes": "" },
  {"date": "01 July", "clinic": ["CS" , ""   ], "values": [], "notes": "Home and eating again, still some clicking" },
- {"date": "02 July", "clinic": [""   , ""   ], "values": [ [ 125, 125],   [         ],   [         ],   [    ],   [        ],   [       ],   [ 1     ],   [         ],   [          ],   [        ] ], "notes": "Chicken" },
- {"date": "03 July", "clinic": [""   , ""   ], "values": [ [ 125     ],   [         ],   [         ],   [    ],   [        ],   [       ],   [       ],   [         ],   [          ],   [        ] ], "notes": "" },
+ {"date": "02 July", "clinic": [""   , ""   ], "values": [ [ 125, 125],   [         ],   [         ],   [    ],   [        ],   [       ],   [ 1     ],   [         ],   [          ],   [        ] ], "notes": "Chicken, 1.5 mg Boron" },
+ {"date": "03 July", "clinic": [""   , ""   ], "values": [ [ 125     ],   [         ],   [         ],   [    ],   [        ],   [       ],   [       ],   [         ],   [          ],   [        ] ], "notes": "1.5 mg Boron" },
  {"date": ""       , "clinic": [""   , ""   ], "values": [ ["Omepraz"],   ["Clindam"],   ["Metroni"],   ["En"],   ["Carpro"],   ["Trama"],   ["Canna"],   ["Curcuma"],   ["Bromelin"],   ["Ginger"] ], "notes": "" }
 ]
