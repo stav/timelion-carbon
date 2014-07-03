@@ -1,4 +1,3 @@
-# angular-seed — the seed for AngularJS apps
 
 timelion-carbon
 ===============
@@ -28,7 +27,7 @@ Clone the repository using [git][git]:
 
 ```
 git clone https://github.com/stav/timelion-carbon.git
-cd timelion/carbon
+cd timelion-carbon
 ```
 
 ### Install Dependencies

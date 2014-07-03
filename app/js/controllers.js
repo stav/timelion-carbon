@@ -10,14 +10,6 @@ controller('MyCtrl1', ['$scope', function($scope) {}]).
 
 controller('MyCtrl2', ['$scope', function($scope) {}]).
 
-controller('tBodyController', function ($scope, EventsDataService) {
-  $scope.events = [];
-
-  EventsDataService.success(function (data) {
-    $scope.events = data;
-  });
-}).
-
 controller('EventController', function (MedsDataService) {
   var store = this;
   store.values = [];
@@ -59,10 +51,18 @@ controller('EventController', function (MedsDataService) {
   };
 }).
 
-controller('tHeadController', function ($scope, $http, MedsDataService) {
+controller('tHeadController', function ($scope, MedsDataService) {
   $scope.values = [];
 
   MedsDataService.success(function (data) {
     $scope.values = data; //.splice(0, 1);
+  });
+}).
+
+controller('tBodyController', function ($scope, EventsDataService) {
+  $scope.events = [];
+
+  EventsDataService.success(function (data) {
+    $scope.events = data;
   });
 });
