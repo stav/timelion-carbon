@@ -22,8 +22,8 @@ controller('EventController', function (MedsDataService) {
   var store = this;
   store.values = [];
 
-  MedsDataService.then(function (result) {
-    store.values = result.data;
+  MedsDataService.success(function (data) {
+    store.values = data;
   });
 
   this.init = function (event) {

@@ -12,8 +12,15 @@ module('myApp', [
   'myApp.controllers'
 ]).
 
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
   $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
   $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
   $routeProvider.otherwise({redirectTo: '/view1'});
+
+  // Turn off caching for devel
+  $httpProvider.defaults.cache = false;
+  if (!$httpProvider.defaults.headers.get) $httpProvider.defaults.headers.get = {};
+  $httpProvider.defaults.headers.get['If-Modified-Since'] = '0';
+  $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+  $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
 }]);
