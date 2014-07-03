@@ -6,7 +6,7 @@ module('myApp.services', []).
 
 /* Services */
 
-value('version', '0.1').
+value('version', '0.2').
 
 factory('EventsDataService', function ($http) {
     return $http({method: 'GET', url: 'data/events.json'});
