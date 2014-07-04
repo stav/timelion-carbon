@@ -1,10 +1,12 @@
-/* app css stylesheet */
+/* menu */
 
 .menu {
+  border-top: 0.1em dotted black;
+  font-size: 2em;
   list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+  margin: 0;
+  padding: 0;
+  text-align: right;
 }
 
 .menu:before {
@@ -29,12 +31,19 @@
   padding: 0;
 }
 
-/* #SMA */
-@import url("bootstrap.css");
+/* panel */
 
-section.panel {
+.panel {
   margin-left: 37px;
 }
+
+/* table */
+
+.table caption {
+  font-size: 2em;
+}
+
+/* other */
 
 .miceli {
   background-color: green;

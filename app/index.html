@@ -27,7 +27,22 @@
     </div>
   </header>
 
-  <div ng-view></div>
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <p> Daily Log of the events that happened during Carbon's recovery,
+      basically what drugs he got when. </p>
+    </div>
+    <div class="panel-body">
+      <p> Carbie's femur found a car's bumper on the last day of May 2014, a
+      Saturday.  This log beings when he had his surgery, the following Monday,
+      June 2nd. </p>
+      <ul class="menu">
+        <li><a href="#/view1">Meds</a></li>
+        <li><a href="#/view2">Costs</a></li>
+      </ul>
+    </div>
+    <div ng-view></div>
+  </section>
 
   <footer>
     <div class="hero-unit">
@@ -71,12 +86,10 @@
          like hell to not allow us to turn him upside down, which might
          have contributed to the hip joint noise becoming very ould now.
         </p>
-        <ul class="menu">
-          <li><a href="#/view1">view1</a></li>
-          <li><a href="#/view2">view2</a></li>
-        </ul>
         <div id="plug">
-          <p>Angular seed app: v<span app-version></span></p>
+          <p>Angular seed app: v<span app-version></span> and we can also
+             say {{ 'v%VERSION%.' | interpolate }}
+          </p>
         </div>
       </div>
     </div>

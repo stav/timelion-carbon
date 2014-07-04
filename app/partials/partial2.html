@@ -1,5 +1,28 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+  <table class="table table-striped">
+    <caption>Costs</caption>
+    <thead ng-controller="tHeadController">
+      <tr>
+          <th> Day    </th>
+          <th>        </th>
+          <th> Date   </th>
+          <th> Clinic </th>
+          <th ng-repeat="value in values"> $$$$$$$$$$ </th>
+      </tr>
+    </thead>
+    <tbody ng-controller="tBodyController">
+      <tr
+        ng-repeat="event in events"
+        ng-controller="EventController as E"
+        ng-init="E.init(event)"
+        title="{{event.notes}}">
+          <td align="right"> <span class="badge" ng-show="$index > 1"> {{$index - 1}} </span> </td>
+          <td> <span class="glyphicon lyphicon glyphicon-list-alt" ng-show="event.notes"></span> </td>
+          <td ng-bind="event.date"></td>
+          <td>
+            <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
+            <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
+          </td>
+          <td colspan="{{E.values.length}}}" ng-bind="event.notes"></td>
+      </tr>
+    </tbody>
+  </table>
