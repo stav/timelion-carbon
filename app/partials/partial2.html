@@ -6,7 +6,7 @@
           <th>        </th>
           <th> Date   </th>
           <th> Clinic </th>
-          <th ng-repeat="value in values"> $$$$$$$$$$ </th>
+          <th ng-repeat="med in meds"> $$$$$$$$$$ </th>
       </tr>
     </thead>
     <tbody ng-controller="tBodyController">
@@ -22,7 +22,7 @@
             <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
             <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
           </td>
-          <td colspan="{{E.values.length}}}" ng-bind="event.notes"></td>
+          <td colspan="{{E.meds.length}}}" ng-bind="event.notes"></td>
       </tr>
     </tbody>
   </table>

@@ -32,7 +32,7 @@ describe('controllers', function() {
     var tHeadCtrl = $controller('tHeadController', { $scope: this.scope, MedsDataService: this.promise });
     expect(tHeadCtrl).toBeDefined();
     this.promise._success(this.data); // mock the callback
-    test_data(this.scope.values);
+    test_data(this.scope.meds);
   }));
 
   it('should provide $scope with an array of the service data', inject(function($controller) {
@@ -46,7 +46,7 @@ describe('controllers', function() {
     var eventCtrl = $controller('EventController', { MedsDataService: this.promise });
     expect(eventCtrl).toBeDefined();
     this.promise._success(this.data); // mock the callback
-    test_data(eventCtrl.values);
+    test_data(eventCtrl.meds);
   }));
 
   // console.log(this);

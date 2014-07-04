@@ -13,5 +13,5 @@ factory('EventsDataService', function ($http) {
 }).
 
 factory('MedsDataService', function ($http) {
-    return $http({method: 'GET', url: 'data/values.json'});
+    return $http({method: 'GET', url: 'data/meds.json'});
 });

@@ -7,23 +7,23 @@
           <th> Date   </th>
           <th> Clinic </th>
           <th
-            ng-repeat="value in values"
+            ng-repeat="med in meds"
             bs-popover
             ><span
               data-container="th"
-              data-original-title="{{value.engl}}"
+              data-original-title="{{med.engl}}"
               data-placement="top"
               data-toggle="tooltip"
               ><button
                 type="button"
                 class="btn btn-default"
                 data-container="th"
-                data-content="<p>{{value.pron}}</p><ul><li><value>{{value.bran}}</value></ul><p>{{value.html}}</p>"
+                data-content="<p>{{med.pron}}</p><ul><li><med>{{med.bran}}</med></ul><p>{{med.html}}</p>"
                 data-html="true"
-                data-original-title="<h2><a href='{{value.link}}'>{{value.engl}}</a></h2>"
+                data-original-title="<h2><a href='{{med.link}}'>{{med.engl}}</a></h2>"
                 data-placement="bottom"
                 data-toggle="popover"
-                ng-bind="value.name"
+                ng-bind="med.name"
               ></button>
             </span>
           </th>
@@ -42,8 +42,8 @@
             <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
             <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
           </td>
-          <td ng-show="!E.hasMeds()" colspan="{{E.values.length}}}" ng-bind="event.notes"></td>
-          <td ng-show="E.hasMeds()" ng-repeat="i in E.values_indexes">
+          <td ng-show="!E.hasMeds()" colspan="{{E.meds.length}}}" ng-bind="event.notes"></td>
+          <td ng-show="E.hasMeds()" ng-repeat="i in E.meds_indexes">
             <span ng-show="E.hasDosage(i)">
               <span
                 class="label"
