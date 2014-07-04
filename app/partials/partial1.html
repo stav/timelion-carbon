@@ -1,6 +1,6 @@
   <table class="table table-striped">
     <caption>Meds</caption>
-    <thead ng-controller="tHeadController">
+    <thead ng-controller="MedController">
       <tr>
           <th> Day    </th>
           <th>        </th>
@@ -29,7 +29,7 @@
           </th>
       </tr>
     </thead>
-    <tbody ng-controller="tBodyController">
+    <tbody ng-controller="EventsController">
       <tr
         ng-repeat="event in events"
         ng-controller="EventController as E"

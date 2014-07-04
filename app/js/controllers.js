@@ -1,14 +1,24 @@
 'use strict';
-
 angular.
-
 module('myApp.controllers', []).
 
 /* Controllers */
 
-controller('MyCtrl1', ['$scope', function($scope) {}]).
+controller('MedController', function ($scope, MedsDataService) {
+  $scope.meds = [];
 
-controller('MyCtrl2', ['$scope', function($scope) {}]).
+  MedsDataService.success(function (data) {
+    $scope.meds = data; //.splice(0, 1);
+  });
+}).
+
+controller('EventsController', function ($scope, EventsDataService) {
+  $scope.events = [];
+
+  EventsDataService.success(function (data) {
+    $scope.events = data;
+  });
+}).
 
 controller('EventController', function (MedsDataService) {
   var self = this;
@@ -40,14 +50,14 @@ controller('EventController', function (MedsDataService) {
     for (var i = 0; i < this.event.meds.length; i++) {
       // if (!angular.isArray(this.event.meds[i])) return false;
       if (this.event.meds[i].length > 0) return true;
-    };
+    }
     return false;
   };
   this.hasDosage = function (med) {
     return this.getMed(med).length > 0;
   };
   this.getMedsRange = function (med) {
-    return Array(Math.abs(this.getMed(med)));
+    return new Array(Math.abs(this.getMed(med)));
   };
   this.observed = function (med, batch) {
     return this.getMed(med)[batch] > 0;
@@ -59,20 +69,4 @@ controller('EventController', function (MedsDataService) {
     if (med in self.meds)
       return '' + Math.abs(dose) + ' ' + self.meds[med].unit;
   };
-}).
-
-controller('tHeadController', function ($scope, MedsDataService) {
-  $scope.meds = [];
-
-  MedsDataService.success(function (data) {
-    $scope.meds = data; //.splice(0, 1);
-  });
-}).
-
-controller('tBodyController', function ($scope, EventsDataService) {
-  $scope.events = [];
-
-  EventsDataService.success(function (data) {
-    $scope.events = data;
-  });
 });

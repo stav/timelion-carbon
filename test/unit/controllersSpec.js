@@ -29,14 +29,14 @@ describe('controllers', function() {
   }
 
   it('should provide $scope with an array of the service data', inject(function($controller) {
-    var tHeadCtrl = $controller('tHeadController', { $scope: this.scope, MedsDataService: this.promise });
+    var tHeadCtrl = $controller('MedController', { $scope: this.scope, MedsDataService: this.promise });
     expect(tHeadCtrl).toBeDefined();
     this.promise._success(this.data); // mock the callback
     test_data(this.scope.meds);
   }));
 
   it('should provide $scope with an array of the service data', inject(function($controller) {
-    var tBodyCtrl = $controller('tBodyController', { $scope: this.scope, EventsDataService: this.promise });
+    var tBodyCtrl = $controller('EventsController', { $scope: this.scope, EventsDataService: this.promise });
     expect(tBodyCtrl).toBeDefined();
     this.promise._success(this.data); // mock the callback
     test_data(this.scope.events);
