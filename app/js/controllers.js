@@ -19,7 +19,7 @@ controller('EventController', function (MedsDataService) {
     self.values = data;
     // Create array of integers of the data indexes, e.g. [1, 2, 3, 4, 5, 6, 7]
     var index = data.length;
-    while (index--) self.values_indexes[index] = index + 1;
+    while (index) self.values_indexes[--index] = index;
   });
 
   this.init = function (event) {
