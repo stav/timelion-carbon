@@ -1,7 +1,7 @@
-misc/
-node_modules/
 bower_components/
+node_modules/
+misc/
 !.gitkeep
-tmp
 .DS_Store
 .idea
+tmp

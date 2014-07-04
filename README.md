@@ -4,26 +4,21 @@ timelion-carbon
 
 A log of drugs my dog was on during his recovery.
 
-This project is based on the AngularJS application skeleton for a typical
-[AngularJS](http://angularjs.org/) web app which is usefl to quickly bootstrap
-angular webapp projects and dev environments.
+This project is based on the AngularJS [seed application](https://github.com/angular/angular-seed)
+"skeleton" for a typical [AngularJS](http://angularjs.org/) web app which is useful
+to quickly bootstrap angular webapp projects and dev environments.
 
 ## Getting Started
 
-To get you started you can simply clone this repository and install the dependencies:
+To get started using `timelion/carbon`, clone this repository and install the
+dependencies:
 
 ### Prerequisites
 
-Of course you'll need git to clone the repository. You can get it from
-[http://git-scm.com/](http://git-scm.com/).
+Of course you'll need [git][git] to clone the repository and a number of
+[node.js](http://nodejs.org/) tools like `npm` to initialize and test.
 
-Also a number of node.js tools to initialize and test angular-seed. You must have
-node.js and its package manager (npm) installed.  You can get them from
-[http://nodejs.org/](http://nodejs.org/).
-
-### Clone angular-seed
-
-Clone the repository using [git][git]:
+### Clone the repository
 
 ```
 git clone https://github.com/stav/timelion-carbon.git
@@ -96,8 +91,8 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
 
 ## Testing
 
-There are two kinds of tests in the angular-seed application: Unit tests and
-End to End tests.
+There are two kinds of tests in the angular-seed application: _Unit_ tests and
+_End to End_ tests.
 
 ### Running Unit Tests
 
