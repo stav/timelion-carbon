@@ -11,11 +11,15 @@ controller('MyCtrl1', ['$scope', function($scope) {}]).
 controller('MyCtrl2', ['$scope', function($scope) {}]).
 
 controller('EventController', function (MedsDataService) {
-  var store = this;
-  store.values = [];
+  var self = this;
+  self.values = [];
+  self.values_indexes = [];
 
   MedsDataService.success(function (data) {
-    store.values = data;
+    self.values = data;
+    // Create array of integers of the data indexes, e.g. [1, 2, 3, 4, 5, 6, 7]
+    var index = data.length;
+    while (index--) self.values_indexes[index] = index + 1;
   });
 
   this.init = function (event) {
@@ -31,7 +35,13 @@ controller('EventController', function (MedsDataService) {
     return this.event.clinic[clinic].length > 0;
   };
   this.hasMeds = function () {
-    return this.event.values instanceof Array && this.event.values.length > 0;
+    // if (!angular.isArray(this.event.values)) return false;
+    // if (!this.event.values.length) return false;
+    for (var i = 0; i < this.event.values.length; i++) {
+      // if (!angular.isArray(this.event.values[i])) return false;
+      if (this.event.values[i].length > 0) return true;
+    };
+    return false;
   };
   this.hasDosage = function (med) {
     return this.getMed(med).length > 0;
@@ -46,8 +56,8 @@ controller('EventController', function (MedsDataService) {
     return this.getMed(med)[batch] < 0;
   };
   this.med = function (med, dose) {
-    if (med in store.values)
-      return '' + Math.abs(dose) + ' ' + store.values[med].unit;
+    if (med in self.values)
+      return '' + Math.abs(dose) + ' ' + self.values[med].unit;
   };
 }).
 

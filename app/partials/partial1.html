@@ -48,8 +48,8 @@
             <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
             <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
           </td>
-          <td ng-show="!E.hasMeds()" colspan="10" ng-bind="event.notes"></td>
-          <td ng-show="E.hasMeds()" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
+          <td ng-show="!E.hasMeds()" colspan="{{E.values.length}}}" ng-bind="event.notes"></td>
+          <td ng-show="E.hasMeds()" ng-repeat="i in E.values_indexes">
             <span ng-show="E.hasDosage(i)">
               <span
                 class="label"

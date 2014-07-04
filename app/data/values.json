@@ -57,22 +57,29 @@
     {
       "name": "Cannabis",
       "engl": "Hemp",
-      "unit": "d",
+      "unit": "",
       "pron": "ˈkænəbɪs",
       "bran": "Cannabis sativa (L.) <li>Cannabis indica (Lam.) <li>Cannabis ruderalis (Janisch)",
       "link": "http://www.cannabis-med.org/index.php?tpl=cannabinoidslist&lng=en",
-      "html": ""
+      "html": "Dosage is in drops."
     },
     {
       "name": "Curcuma",
-      "unit": "c"
+      "unit": "",
+      "html": "Dosage is in capsules."
     },
     {
       "name": "Bromelain",
-      "unit": "c"
+      "unit": "",
+      "html": "Dosage is in capsules."
     },
     {
       "name": "Ginger",
-      "unit": "c"
+      "unit": "",
+      "html": "Dosage is in capsules."
+    },
+    {
+      "name": "Boron",
+      "unit": "mg"
     }
 ]
