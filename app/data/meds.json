@@ -64,21 +64,6 @@
       "html": "Dosage is in drops."
     },
     {
-      "name": "Curcuma",
-      "unit": "",
-      "html": "Dosage is in capsules."
-    },
-    {
-      "name": "Bromelain",
-      "unit": "",
-      "html": "Dosage is in capsules."
-    },
-    {
-      "name": "Ginger",
-      "unit": "",
-      "html": "Dosage is in capsules."
-    },
-    {
       "name": "Boron",
       "unit": "mg"
     }
