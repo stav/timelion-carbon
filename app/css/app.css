@@ -56,8 +56,8 @@
 .gridStyle .ralign {
   text-align: right;
 }
-.gridStyle .ngFooterTotalCost {
-  font-size: 1.5em;
+.gridStyle .ngFooterTotalItems {
+  font-size: 1.2em;
 }
 
 /* other */

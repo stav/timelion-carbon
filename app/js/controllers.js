@@ -7,6 +7,7 @@ module('myApp.controllers', []).
 controller('CostController', function ($scope, $templateCache, CostsDataService) {
   $scope.costs = [];
   $scope.total_cost = 0;
+  $scope.selected_cost = 0;
   $scope.costGrid = {
     data: 'costs',
     showFooter: true,
@@ -19,7 +20,14 @@ controller('CostController', function ($scope, $templateCache, CostsDataService)
       {field:'type', displayName:'Type'},
       {field:'desc', displayName:'Description', cellClass:'lalign', minWidth:300, width:'auto'}
     ],
-    footerTemplate: $templateCache.get('gridFooter')
+    footerTemplate: $templateCache.get('gridFooter'),
+    afterSelectionChange: function (row, event) {
+      $scope.selected_cost = 0;
+      var items = $scope.costGrid.$gridScope.selectedItems;
+      for (var i = 0; i < items.length; i++) {
+        $scope.selected_cost += items[i].cost;
+      }
+    }
   };
 
   CostsDataService.success(function (data) {
