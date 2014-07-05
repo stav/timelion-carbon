@@ -2,6 +2,7 @@
   "globalstrict": true,
   "globals": {
     "angular": false,
+    "jQuery": false,
     "ngGridFlexibleHeightPlugin": false
   }
 }
