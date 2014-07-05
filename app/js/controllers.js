@@ -6,6 +6,7 @@ module('myApp.controllers', []).
 
 controller('CostController', function ($scope, CostsDataService) {
   $scope.costs = [];
+  $scope.total_cost = 0;
   $scope.costGrid = {
     data: 'costs',
     showFooter: true,
@@ -17,11 +18,15 @@ controller('CostController', function ($scope, CostsDataService) {
       {field:'cost', displayName:'Cost', cellClass:'ralign'},
       {field:'type', displayName:'Type'},
       {field:'desc', displayName:'Description', cellClass:'lalign', minWidth:300, width:'auto'}
-    ]
+    ],
+    footerTemplate: '<div ng-show="showFooter" class="ngFooterPanel" ng-style="footerStyle()"> <div class="ngTotalSelectContainer" > <div class="ngFooterTotalItems"}" > <span class="ngLabel">{{i18n.ngTotalItemsLabel}} {{maxRows()}}</span><span ng-show="filterText.length > 0" class="ngLabel">({{i18n.ngShowingItemsLabel}} {{totalFilteredItemsLength()}})</span> </div> <div class="ngFooterSelectedItems" ng-show="multiSelect"> <span class="ngLabel">{{i18n.ngSelectedItemsLabel}} {{selectedItems.length}}</span> </div> <div class="ngFooterTotalCost"> <span class="ngLabel"> Total Cost: {{total_cost | currency:"MXN$"}} </span> </div> </div> </div>'
   };
 
   CostsDataService.success(function (data) {
     $scope.costs = data;
+    data.forEach(function (transaction) {
+      $scope.total_cost += transaction.cost;
+    });
   });
 }).
 
