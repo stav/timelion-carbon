@@ -1,28 +1,7 @@
-  <table class="table table-striped">
-    <caption>Costs</caption>
-    <thead ng-controller="MedController">
-      <tr>
-          <th> Day    </th>
-          <th>        </th>
-          <th> Date   </th>
-          <th> Clinic </th>
-          <th ng-repeat="med in meds"> $$$$$$$$$$ </th>
-      </tr>
-    </thead>
-    <tbody ng-controller="EventsController">
-      <tr
-        ng-repeat="event in events"
-        ng-controller="EventController as E"
-        ng-init="E.init(event)"
-        title="{{event.notes}}">
-          <td align="right"> <span class="badge" ng-show="$index > 1"> {{$index - 1}} </span> </td>
-          <td> <span class="glyphicon lyphicon glyphicon-list-alt" ng-show="event.notes"></span> </td>
-          <td ng-bind="event.date"></td>
-          <td>
-            <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
-            <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
-          </td>
-          <td colspan="{{E.meds.length}}}" ng-bind="event.notes"></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="data-container">
+
+  <p class="banner">Costs</p>
+
+  <div class="gridStyle" ng-grid="costGrid"></div>
+
+</div>

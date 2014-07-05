@@ -4,6 +4,27 @@ module('myApp.controllers', []).
 
 /* Controllers */
 
+controller('CostController', function ($scope, CostsDataService) {
+  $scope.costs = [];
+  $scope.costGrid = {
+    data: 'costs',
+    showFooter: true,
+    enableColumnResize: true,
+    excludeProperties: ['id', '$$hashKey'],
+    plugins: [new ngGridFlexibleHeightPlugin()],
+    columnDefs: [
+      {field:'date', displayName:'Date', cellClass:'lalign'},
+      {field:'cost', displayName:'Cost', cellClass:'ralign'},
+      {field:'type', displayName:'Type'},
+      {field:'desc', displayName:'Description', cellClass:'lalign', minWidth:300, width:'auto'}
+    ]
+  };
+
+  CostsDataService.success(function (data) {
+    $scope.costs = data;
+  });
+}).
+
 controller('MedController', function ($scope, MedsDataService) {
   $scope.meds = [];
 

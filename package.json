@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "timelion-carbon",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "0.2.0",
+  "description": "A log of drugs my dog was on.",
+  "repository": "https://github.com/stav/timelion-carbon",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",

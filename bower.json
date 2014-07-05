@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "timelion-carbon",
+  "description": "A log of drugs my dog was on.",
+  "version": "0.2.0",
+  "homepage": "https://github.com/stav/timelion-carbon",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "angular-route": "1.2.x",
     "angular-loader": "1.2.x",
     "angular-mocks": "~1.2.x",
+    "ng-grid": "~2.x.x",
     "jquery": "1.11.x",
     "bootstrap": "3.1.x",
     "html5-boilerplate": "~4.3.0"
