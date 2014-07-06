@@ -14,13 +14,13 @@ controller('CostController', function ($scope, $templateCache, CostsDataService)
     enableColumnResize: true,
     excludeProperties: ['id', '$$hashKey'],
     plugins: [new ngGridFlexibleHeightPlugin()],
+    footerTemplate: $templateCache.get('gridFooter'),
     columnDefs: [
       {field:'date', displayName:'Date', cellClass:'lalign'},
       {field:'cost', displayName:'Cost', cellClass:'ralign'},
       {field:'type', displayName:'Type'},
       {field:'desc', displayName:'Description', cellClass:'lalign', minWidth:300, width:'auto'}
     ],
-    footerTemplate: $templateCache.get('gridFooter'),
     afterSelectionChange: function (row, event) {
       $scope.selected_cost = 0;
       var items = $scope.costGrid.$gridScope.selectedItems;
@@ -66,7 +66,9 @@ controller('EventController', function (MedsDataService) {
     while (index) self.meds_indexes[--index] = index;
   });
 
-  this.init = function (event) {
+  this.init = function (index, event) {
+    this.day = index - 1;
+    this.week = Math.floor((this.day - 1) / 7) + 1;
     this.event = event;
   };
   this.getMed = function (med) {

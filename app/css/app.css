@@ -42,6 +42,9 @@
 .table caption {
   font-size: 2em;
 }
+.table-hover tbody tr:hover td {
+  background-color: #A0C1FB;
+}
 
 /* grid*/
 
@@ -60,6 +63,36 @@
   font-size: 1.2em;
 }
 
+/* badges */
+
+.badge.w1 {
+  background-color: red;
+}
+.badge.w2 {
+  background-color: orange;
+}
+.badge.w3 {
+  background-color: yellow;
+}
+.badge.w4 {
+  background-color: green;
+}
+.badge.w5 {
+  background-color: blue;
+}
+.badge.w6 {
+  background-color: indigo;
+}
+.badge.w7 {
+  background-color: violet;
+}
+.miceli {
+  background-color: green;
+}
+.marina {
+  background-color: cyan;
+}
+
 /* other */
 
 .data-container {
@@ -67,13 +100,6 @@
 }
 .banner {
   font-size: 2em;
-}
-
-.miceli {
-  background-color: green;
-}
-.marina {
-  background-color: cyan;
 }
 #plug {
   text-align: center;

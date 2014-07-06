@@ -1,8 +1,8 @@
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
     <caption>Meds</caption>
     <thead ng-controller="MedController">
       <tr>
-          <th> Day    </th>
+          <th style="text-align: right"> Day/Wk </th>
           <th>        </th>
           <th> Date   </th>
           <th> Clinic </th>
@@ -33,9 +33,12 @@
       <tr
         ng-repeat="event in events"
         ng-controller="EventController as E"
-        ng-init="E.init(event)"
+        ng-init="E.init($index, event)"
         title="{{event.notes}}">
-          <td align="right"> <span class="badge" ng-show="$index > 1"> {{$index - 1}} </span> </td>
+          <td align="right">
+            <span ng-bind="E.day"  ng-show="E.day > 0" class="badge"></span>
+            <span ng-bind="E.week" ng-show="E.day > 0" class="badge w{{E.week}}"></span>
+          </td>
           <td> <span class="glyphicon lyphicon glyphicon-list-alt" ng-show="event.notes"></span> </td>
           <td ng-bind="event.date"></td>
           <td>

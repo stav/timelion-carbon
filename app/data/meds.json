@@ -64,6 +64,16 @@
     },
     {
       "name": "Boron",
+      "engl": "Tri-Boron",
+      "unit": "mg",
+      "bran": "Twinlab",
+      "link": "http://www.twinlab.com/product/tri-boron-caps",
+      "html": "Boron is a chemical element with symbol B and atomic number 5. <p>Boron works in unison with calcium to strengthen the bones. Boron also helps in the metabolism of minerals that are involved in bone development such as calcium, magnesium and copper. Furthermore, boron affects various hormones, including estrogen and testosterone, which are also related to the overall health of the body’s bones."
+    },
+    {
+      "name": "Fish Oil",
+      "engl": "Fish Body Oils 1000",
+      "bran": "GNC",
       "unit": "mg"
     }
 ]
