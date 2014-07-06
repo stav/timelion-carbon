@@ -13,7 +13,7 @@
       "engl": "Clindamycin",
       "unit": "mg",
       "pron": "/klɪndəˈmaɪsɨn/",
-      "bran": "Cleocin / Cleocin Phosphate",
+      "bran": "Clinda-Pet's NRV",
       "link": "http://www.merckmanuals.com/professional/lexicomp/clindamycin%20%28systemic%29.html",
       "html": "An <u>antibiotic</u> useful for the treatment of a number of infections. It is of the lincosamide class. It is usually used to treat infections with <u>anaerobic bacteria</u>, but can also be used to treat some protozoal diseases, such as malaria. It is a common topical treatment for acne and can be useful against some methicillin-resistant Staphylococcus aureus (MRSA) infections."
     },
@@ -37,11 +37,10 @@
     },
     {
       "name": "Carprofen",
-      "note": "Sold as Rimadyl & Carproby",
       "engl": "Carprofen",
       "unit": "mg",
       "pron": "C15H12ClNO2",
-      "bran": "Vetprofen, Rimadyl, Imadyl, Novox, Imafen, Rovera",
+      "bran": "Rimadyl used except for June 13-16 when he got Carprobay from Bayer",
       "link": "http://en.wikipedia.org/wiki/Carprofen",
       "html": "A non-steroidal anti-inflammatory drug that veterinarians prescribe as a supportive treatment for various conditions. It provides day-to-day treatment for pain and inflammation from arthritis in geriatric dogs, joint pain, osteoarthritis, hip dysplasia, and other forms of joint deterioration. <p>It is also used to relieve short-term post-operative pain, inflammation, and swelling after spaying, neutering, and other procedures. Carprofen reduces inflammation by inhibition of COX-2 and other sources of inflammatory prostaglandins. This is targeted protection, in that it does not interfere with COX-1 activity."
     },
@@ -61,7 +60,7 @@
       "pron": "ˈkænəbɪs",
       "bran": "Cannabis sativa (L.) <li>Cannabis indica (Lam.) <li>Cannabis ruderalis (Janisch)",
       "link": "http://www.cannabis-med.org/index.php?tpl=cannabinoidslist&lng=en",
-      "html": "Dosage is in drops."
+      "html": "Dosage is in drops; dosage before June 18th is estimated."
     },
     {
       "name": "Boron",
