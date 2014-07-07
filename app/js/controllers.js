@@ -10,11 +10,16 @@ controller('CostController', function ($scope, $templateCache, CostsDataService)
   $scope.selected_cost = 0;
   $scope.costGrid = {
     data: 'costs',
-    showFooter: true,
     enableColumnResize: true,
     excludeProperties: ['id', '$$hashKey'],
-    plugins: [new ngGridFlexibleHeightPlugin()],
+    multiSelect: true,
+    selectWithCheckboxOnly: false,
+    showSelectionCheckbox: true,
+    showFooter: true,
     footerTemplate: $templateCache.get('gridFooter'),
+    plugins: [
+      new ngGridFlexibleHeightPlugin()
+    ],
     columnDefs: [
       {field:'date', displayName:'Date', cellClass:'lalign'},
       {field:'cost', displayName:'Cost', cellClass:'ralign'},
