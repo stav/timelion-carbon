@@ -4,12 +4,13 @@ module('myApp.controllers', []).
 
 /* Controllers */
 
-controller('CostController', function ($scope, $templateCache, CostsDataService) {
-  $scope.costs = [];
-  $scope.total_cost = 0;
-  $scope.selected_cost = 0;
-  $scope.costGrid = {
-    data: 'costs',
+controller('DataController', function ($scope, $routeParams, $templateCache, FileDataService) {
+  $scope.theData = [];
+  $scope.name = $routeParams.file;
+  $scope.total = 0;
+  $scope.total_selected = 0;
+  $scope.dataGrid = {
+    data: 'theData',
     enableColumnResize: true,
     excludeProperties: ['id', '$$hashKey'],
     multiSelect: true,
@@ -20,25 +21,38 @@ controller('CostController', function ($scope, $templateCache, CostsDataService)
     plugins: [
       new ngGridFlexibleHeightPlugin()
     ],
-    columnDefs: [
-      {field:'date', displayName:'Date', cellClass:'lalign'},
-      {field:'cost', displayName:'Cost', cellClass:'ralign'},
-      {field:'type', displayName:'Type'},
-      {field:'desc', displayName:'Description', cellClass:'lalign', minWidth:300, width:'auto'}
-    ],
+    // columnDefs: [
+    //   {field:'date', displayName:'Date', cellClass:'lalign'},
+    //   {field:'cost', displayName:'Cost', cellClass:'ralign'},
+    //   {field:'type', displayName:'Type'},
+    //   {field:'desc', displayName:'Description', cellClass:'lalign', minWidth:300, width:'auto'}
+    // ],
     afterSelectionChange: function (row, event) {
-      $scope.selected_cost = 0;
-      var items = $scope.costGrid.$gridScope.selectedItems;
+      $scope.total_selected = 0;
+      var items = $scope.dataGrid.$gridScope.selectedItems;
       for (var i = 0; i < items.length; i++) {
-        $scope.selected_cost += items[i].cost;
+        $scope.total_selected += items[i][$scope.total_fieldname];
       }
     }
   };
 
-  CostsDataService.success(function (data) {
-    $scope.costs = data;
-    data.forEach(function (transaction) {
-      $scope.total_cost += transaction.cost;
+  /* API code goes here */
+               // .success(function (data, status, headers, config) {
+  FileDataService.success(function (data) {
+    // Pop commands of the data
+    for (var i = data.length - 1; i >= 0; i--) {
+      if (angular.isDefined(data[i].timelion)) {
+        if (angular.isDefined(data[i].timelion.name))
+          $scope.name = data[i].timelion.name;
+        if (angular.isDefined(data[i].timelion.total))
+          $scope.total_fieldname = data[i].timelion.total;
+      }
+      else
+        $scope.theData.push(data[i]); // data
+    }
+    // Calc total
+    $scope.theData.forEach(function (transaction) {
+      $scope.total += transaction[$scope.total_fieldname];
     });
   });
 }).

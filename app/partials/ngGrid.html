@@ -1,8 +1,8 @@
 <div class="data-container">
 
-  <p class="banner">Costs</p>
+  <p class="banner">{{ name }}</p>
 
-  <div class="gridStyle" ng-grid="costGrid"></div>
+  <div class="gridStyle" ng-grid="dataGrid"></div>
 
   <script type="text/ng-template" id="gridFooter">
 
@@ -13,14 +13,14 @@
         <div class="ngFooterSelectedItems" ng-show="selectedItems.length">
           <span class="ngLabel">
             {{ i18n.ngSelectedItemsLabel }} {{ selectedItems.length }} @
-            {{ selected_cost | currency:"MXN$ " }}
+            {{ total_selected | currency:"MXN$ " }}
           </span>
         </div>
 
         <div class="ngFooterTotalItems">
           <span class="ngLabel">
             {{ i18n.ngTotalItemsLabel }} {{ maxRows() }} @
-            {{ total_cost | currency:"MXN$ " }}
+            {{ total | currency:"MXN$ " }}
           </span>
         </div>
 

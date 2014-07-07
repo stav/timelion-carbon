@@ -8,8 +8,9 @@ module('myApp.services', []).
 
 value('version', '0.2').
 
-factory('CostsDataService', function ($http) {
-    return $http({method: 'GET', url: 'data/costs.json'});
+factory('FileDataService', function ($http, $routeParams) {
+    var url = 'data/' + $routeParams.file + '.json';
+    return $http({method: 'GET', url: url});
 }).
 
 factory('EventsDataService', function ($http) {

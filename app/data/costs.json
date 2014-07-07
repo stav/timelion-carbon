@@ -1,4 +1,5 @@
 [
+  {"timelion": {"name": "Costs", "total": "cost"}},
   {"date": "2014 05 31", "desc": "San Cris vet",          "type": "vet"  , "cost":  400.00},
   {"date": "2014 05 31", "desc": "Omancin to Tuxtla",     "type": "xport", "cost":  475.00},
   {"date": "2014 06 05", "desc": "operation",             "type": "vet",   "cost": 4500.00},

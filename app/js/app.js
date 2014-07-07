@@ -1,7 +1,7 @@
 'use strict';
 angular.
 
-// Declare app level module which depends on filters, and services
+// Declare app level module with dependencies
 
 module('myApp', [
   'ngGrid',
@@ -12,9 +12,13 @@ module('myApp', [
   'myApp.controllers'
 ]).
 
+// Route configuration
+
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
-  $routeProvider.when('/meds', {templateUrl: 'partials/HTML.html'});
-  $routeProvider.when('/cost', {templateUrl: 'partials/ngGrid.html', controller: 'CostController'});
+  $routeProvider.when('/meds',                    {templateUrl: 'partials/HTML.html'});
+  $routeProvider.when('/cost',                    {redirectTo: '/file/costs'});
+  $routeProvider.when('/file/:file',              {templateUrl: 'partials/ngGrid.html', controller: 'DataController'});
+  $routeProvider.when('/file/:file/files/:files', {templateUrl: 'partials/ngGrid.html', controller: 'DataController'});
   $routeProvider.otherwise({templateUrl: 'partials/front.html'});
 
   // Turn off caching for devel
