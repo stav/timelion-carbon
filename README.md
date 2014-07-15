@@ -2,7 +2,7 @@
 timelion-carbon
 ===============
 
-A log of drugs my dog was on during his recovery.
+A log of drugs our dog was on during his recovery.
 
 This project is based on the AngularJS [seed application](https://github.com/angular/angular-seed)
 "skeleton" for a typical [AngularJS](http://angularjs.org/) web app which is useful
