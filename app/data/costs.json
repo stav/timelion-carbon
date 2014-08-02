@@ -34,7 +34,17 @@
   {"date": "2014 06 23", "desc": "Marina x-ray",          "type": "vet",   "cost":  400.00},
   {"date": "2014 06 23", "desc": "Marina tranquilizer",   "type": "drug",  "cost":  100.00},
   {"date": "2014 06 25", "desc": "taxi: Don Ricardo",     "type": "xport", "cost":  850.00},
-  {"date": "2014 07 01", "desc": "clinimicina",           "type": "drug",  "cost":  280.00},
+  {"date": "2014 07 01", "desc": "clindimicina",           "type": "drug",  "cost": 280.00},
   {"date": "2014 07 01", "desc": "clinic stay (120/day)", "type": "vet",   "cost":  600.00},
-  {"date": "2014 07 01", "desc": "taxi: Don Ricardo",     "type": "xport", "cost":  750.00}
+  {"date": "2014 07 01", "desc": "taxi: Don Ricardo",     "type": "xport", "cost":  750.00},
+
+  {"date": "2014 07 18", "desc": "Juan Jose (propina)",   "type": "vet",   "cost":   40.00},
+  {"date": "2014 07 18", "desc": "clindimicina",          "type": "drug",  "cost":  360.00},
+  {"date": "2014 07 18", "desc": "taxi Don Ricardo",      "type": "xport", "cost":   40.00},
+  {"date": "2014 07 18", "desc": "taxi",                  "type": "xport", "cost":   40.00},
+
+  {"date": "2014 08 01", "desc": "Dr. Miceli",            "type": "xport", "cost":  150.00}
+  {"date": "2014 08 01", "desc": "3 X-rays",              "type": "xport", "cost":  200.00}
+  {"date": "2014 08 01", "desc": "clindimicina",          "type": "xport", "cost":  140.00}
+  {"date": "2014 08 01", "desc": "taxi: Don Ricardo",     "type": "xport", "cost":  820.00}
 ]
