@@ -45,5 +45,10 @@
   {"date": "2014 08 01", "desc": "3 X-rays",                        "type": "xport", "cost":  200.00},
   {"date": "2014 08 01", "desc": "clindimicina",                    "type": "xport", "cost":  140.00},
   {"date": "2014 08 01", "desc": "taxi: Don Ricardo",               "type": "xport", "cost":  820.00},
-  {"date": "2014 08 04", "desc": "joint support, fish oil, probios","type": "drug",  "cost": 1000.00}
+  {"date": "2014 08 04", "desc": "joint support, fish oil, probios","type": "drug",  "cost": 1000.00},
+  {"date": "2014 08 20", "desc": "combi petrol to micelli ",        "type": "xport", "cost":  300.00},
+  {"date": "2014 08 21", "desc": "5 FloxiPet, 18 c/u",              "type": "drug",  "cost":   90.00},
+  {"date": "2014 08 21", "desc": "3 Previcox, 47 c/u",              "type": "drug",  "cost":  141.00},
+  {"date": "2014 08 21", "desc": "Hospitalizacion",                 "type": "drug",  "cost":  150.00},
+  {"date": "2014 08 21", "desc": "Radiografia chica",               "type": "drug",  "cost":  200.00}
 ]

@@ -9,15 +9,6 @@
       "html": "A proton pump inhibitor used in the treatment of dyspepsia, peptic ulcer disease, gastroesophageal reflux disease, laryngopharyngeal reflux, and Zollinger–Ellison syndrome. One of the most widely prescribed drugs internationally and is available over-the-counter in some countries."
     },
     {
-      "name": "Clindamicina",
-      "engl": "Clindamycin",
-      "unit": "mg",
-      "pron": "/klɪndəˈmaɪsɨn/",
-      "bran": "Clinda-Pet's NRV",
-      "link": "http://www.merckmanuals.com/professional/lexicomp/clindamycin%20%28systemic%29.html",
-      "html": "An <u>antibiotic</u> useful for the treatment of a number of infections. It is of the lincosamide class. It is usually used to treat infections with <u>anaerobic bacteria</u>, but can also be used to treat some protozoal diseases, such as malaria. It is a common topical treatment for acne and can be useful against some methicillin-resistant Staphylococcus aureus (MRSA) infections."
-    },
-    {
       "name": "Metronidazol",
       "engl": "Metronidazole",
       "unit": "mg",
@@ -29,11 +20,11 @@
     {
       "name": "Enrofloxacina",
       "engl": "Enrofloxacin",
-      "unit": "ml",
+      "unit": "mg",
       "pron": "C19H22FN3O3",
-      "bran": "Baytril (the Bayer Corporation)",
+      "bran": "Baytril (the Bayer Corporation) <li>FloxiPet's NRV (NorVet)",
       "link": "http://en.wikipedia.org/wiki/Enrofloxacin",
-      "html": "A fluoroquinolone antibiotic used for the treatment of pets and domestic animals. Fluoroquinolones such as ciprofloxacin are widely used in the treatment of human disease."
+      "html": "A fluoroquinolone antibiotic used for the treatment of pets and domestic animals. Fluoroquinolones such as ciprofloxacin are widely used in the treatment of human disease. <p> NOTE: Before 22 August, 4.5 ml (225 mg) Baytril injections were administered, afterwards the FloxiPet pills (150 mg) were given."
     },
     {
       "name": "Carprofen",
@@ -52,6 +43,15 @@
       "bran": "Tramadol by Grünenthal GmbH in Germany, Ryzolt, Tramal, Ultram, the hydrochloride salt by Janssen Pharmaceutica as Ultram in the United States, Ralivia by Biovail in Canada",
       "link": "http://en.wikipedia.org/wiki/Tramadol",
       "html": "A centrally-acting atypical opioid analgesic with additional serotonin-norepinephrine reuptake-inhibiting effects used to treat moderate to moderately severe pain."
+    },
+    {
+      "name": "Clindamicina",
+      "engl": "Clindamycin",
+      "unit": "mg",
+      "pron": "/klɪndəˈmaɪsɨn/",
+      "bran": "Clinda-Pet's NRV",
+      "link": "http://www.merckmanuals.com/professional/lexicomp/clindamycin%20%28systemic%29.html",
+      "html": "An <u>antibiotic</u> useful for the treatment of a number of infections. It is of the lincosamide class. It is usually used to treat infections with <u>anaerobic bacteria</u>, but can also be used to treat some protozoal diseases, such as malaria. It is a common topical treatment for acne and can be useful against some methicillin-resistant Staphylococcus aureus (MRSA) infections."
     },
     {
       "name": "Cannabis",
@@ -75,5 +75,31 @@
       "engl": "Fish Body Oils 1000",
       "bran": "GNC",
       "unit": "mg"
+    },
+    {
+      "name": "TriFlex",
+      "engl": "Joint Supplement: Glucosamina, Condroitina, MSM",
+      "bran": "GNC",
+      "unit": "g"
+    },
+    {
+      "name": "Probioticos",
+      "engl": "Probiotics",
+      "bran": "BioLeven",
+      "link": "http://www.gnc.com.mx/index.php/producto/112203002/BL-Bioeleven-probioticos-20m-30-caps",
+      "html": "725 mg capsulas",
+      "unit": "cap"
+    },
+    {
+      "name": "Curcuma",
+      "engl": "",
+      "bran": "The Sheeps",
+      "unit": ""
+    },
+    {
+      "name": "Bromelin",
+      "engl": "",
+      "bran": "The Sheeps",
+      "unit": ""
     }
 ]
