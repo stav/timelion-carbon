@@ -50,8 +50,11 @@
   {"date": "2014 08 21", "desc": "5 FloxiPet, 18 c/u",              "type": "drug",  "cost":   90.00},
   {"date": "2014 08 21", "desc": "3 Previcox, 47 c/u",              "type": "drug",  "cost":  141.00},
   {"date": "2014 08 21", "desc": "Hospitalizacion",                 "type": "drug",  "cost":  150.00},
-  {"date": "2014 08 21", "desc": "Radiografia chica",               "type": "drug",  "cost":  200.00}
+  {"date": "2014 08 21", "desc": "Radiografia chica",               "type": "drug",  "cost":  200.00},
   {"date": "2014 09 01", "desc": "taxi: Don Ricardo",               "type": "xport", "cost":  720.00},
   {"date": "2014 09 01", "desc": "Checkup",                         "type": "vet",   "cost":  150.00},
   {"date": "2014 09 08", "desc": "taxi: Don Ricardo",               "type": "xport", "cost":  720.00},
+  {"date": "2014 09 13", "desc": "taxi: Don Ricardo",               "type": "xport", "cost":  800.00},
+  {"date": "2014 09 13", "desc": "PrP Surgery w/ 'X' screws",       "type": "vet",   "cost":  600.00},
+  {"date": "2014 09 13", "desc": "Clindamicina",                    "type": "drug",  "cost":   84.00}
 ]
