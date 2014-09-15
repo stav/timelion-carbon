@@ -58,6 +58,35 @@
           </td>
       </tr>
     </tbody>
+    <tfoot ng-controller="MedController">
+      <tr>
+          <th style="text-align: right"> Day/Wk </th>
+          <th>        </th>
+          <th> Date   </th>
+          <th> Clinic </th>
+          <th
+            ng-repeat="med in meds"
+            bs-popover
+            ><span
+              data-container="th"
+              data-original-title="{{med.engl}}"
+              data-placement="top"
+              data-toggle="tooltip"
+              ><button
+                type="button"
+                class="btn btn-default"
+                data-container="th"
+                data-content="<p>{{med.pron}}</p><ul><li><med>{{med.bran}}</med></ul><p>{{med.html}}</p>"
+                data-html="true"
+                data-original-title="<h2><a href='{{med.link}}'>{{med.engl}}</a></h2>"
+                data-placement="top"
+                data-toggle="popover"
+                ng-bind="med.name"
+              ></button>
+            </span>
+          </th>
+      </tr>
+    </tfoot>
   </table>
 
   <section>
@@ -80,9 +109,9 @@
         </p>
         <p class="alert alert-info">
          <span class="glyphicon glyphicon-hand-right"></span>
-         Notes for <strong>June 2nd - 5th</strong>: Probably he got
-           some hard-core opiates in the Clinic but we are not sure
-           what he got actually.
+         Notes for <strong>June 2nd - 5th</strong> as well as <strong>Sept 8th
+           - 13th</strong>: Probably he got some hard-core opiates in the Clinic
+           but we are not sure what he actually got.
         </p>
       </div>
     </div>
