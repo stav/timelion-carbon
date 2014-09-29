@@ -104,8 +104,28 @@
  {"date": "10 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
  {"date": "11 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": "He stayed in the clinic a little longer than expected due to excess inflamation"},
  {"date": "12 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+
  {"date": "13 Sep" , "clinic": ["CZS", ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [ 40    ],   [ 125     ],   [ 9     ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": "Picked him up from Miceli"},
+
  {"date": "14 Sep" , "clinic": [""   , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [ 40, 40],   [ 125, 125],   [ 3     ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": "His pin started sticking out of the skin"},
+ {"date": "15 Sep" , "clinic": [""   , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [ 40, 40],   [ 125, 125],   [ 3     ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": "Rolando sticked up the skin around the pin"},
+ {"date": "16 Sep" , "clinic": [""   , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [ 40, 40],   [ 125, 125],   [ 3     ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+ {"date": "17 Sep" , "clinic": [""   , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [ 40, 40],   [ 125, 125],   [ 10    ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+ {"date": "18 Sep" , "clinic": [""   , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [ 40, 40],   [ 125, 125],   [ 10    ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": "Finished brewing our last batch of oil"},
+ {"date": "19 Sep" , "clinic": [""   , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [ 125, 125],   [ 10    ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": "Pin poked out of the skin again"},
+
+ {"date": "20 Sep" , "clinic": ["CZS", ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": "Miceli said we still need the pin so lets fix it"},
+ {"date": "21 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+ {"date": "22 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": "Carbon got yet another pin (surgury) to secure the intra-medular pin"},
+ {"date": "23 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+ {"date": "24 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+ {"date": "25 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": "Miceli said he wants him for longer observation"},
+ {"date": "26 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+ {"date": "27 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+ {"date": "28 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+ {"date": "29 Sep" , "clinic": ["C"  , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
+
+ {"date": "30 Sep" , "clinic": [""   , ""   ], "meds": [ [    ],   [         ],   [    ],   [        ],   [       ],   [         ],   [       ],   [       ],   [         ],   [     ],   [     ],   [     ],   [     ] ], "notes": ""},
 
  {"date": ""       , "clinic": [""   , ""   ], "meds": [ ["Om"],   ["Metroni"],   ["En"],   ["Carpro"],   ["Trama"],   ["Clindam"],   ["Canna"],   ["Boron"],   ["Fish Oi"],   ["Tri"],   ["Bio"],   ["Cur"],   ["Bro"] ], "notes": ""}
 ]
