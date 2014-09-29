@@ -86,6 +86,7 @@ controller('EventController', function (MedsDataService) {
   });
 
   this.init = function (index, event) {
+    this.prpday = index - 100;
     this.day = index - 1;
     this.week = Math.floor((this.day - 1) / 7) + 1;
     this.event = event;
