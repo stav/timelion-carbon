@@ -77,10 +77,11 @@
       "unit": "mg"
     },
     {
-      "name": "TriFlex",
+      "name": "TriFlex / GlycanAid",
       "engl": "Joint Supplement: Glucosamina, Condroitina, MSM",
-      "bran": "GNC",
-      "unit": "g"
+      "unit": "",
+      "bran": "GNC / TopDog",
+      "html": "On 25 Jan 2015 TriFlex is replaced by GlycanAid from TopDog Chewable Supplement"
     },
     {
       "name": "Probioticos",
@@ -93,13 +94,15 @@
     {
       "name": "Curcuma",
       "engl": "",
-      "bran": "The Sheeps",
-      "unit": ""
+      "bran": "GNC",
+      "unit": "mg",
+      "html": "Before 25 Jan 2015, Sheeps was using home-made capsulas"
     },
     {
       "name": "Bromelin",
       "engl": "",
-      "bran": "The Sheeps",
-      "unit": ""
+      "bran": "GNC",
+      "unit": "mg",
+      "html": "Before 25 Jan 2015, Sheeps was using home-made capsulas"
     }
 ]

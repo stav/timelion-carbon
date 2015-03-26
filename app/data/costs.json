@@ -56,5 +56,24 @@
   {"date": "2014 09 08", "desc": "taxi: Don Ricardo",               "type": "xport", "cost":  720.00},
   {"date": "2014 09 13", "desc": "taxi: Don Ricardo",               "type": "xport", "cost":  800.00},
   {"date": "2014 09 13", "desc": "PrP Surgery w/ 'X' screws",       "type": "vet",   "cost":  600.00},
-  {"date": "2014 09 13", "desc": "Clindamicina",                    "type": "drug",  "cost":   84.00}
+  {"date": "2014 09 13", "desc": "Clindamicina",                    "type": "drug",  "cost":   84.00},
+  {"date": "2014 11 03", "desc": "Cirugía (surgery)",               "type": "vet",   "cost": 7000.00},
+  {"date": "2014 11 03", "desc": "clinic stay (20Sep-3nov)",        "type": "vet",   "cost": 2800.00},
+  {"date": "2014 11 03", "desc": "Clindamicina",                    "type": "drug",  "cost":  196.00},
+  {"date": "2014 11 03", "desc": "Rimadyl",                         "type": "drug",  "cost":   92.00},
+  {"date": "2014 11 03", "desc": "taxi: Don Ricardo",               "type": "xport", "cost":  750.00},
+  {"date": "2014 11 10", "desc": "Clindamicina",                    "type": "drug",  "cost":  300.00},
+  {"date": "2014 11 10", "desc": "taxi: Don Ricardo",               "type": "xport", "cost":   80.00},
+  {"date": "2014 11 17", "desc": "Dr. Miceli",                      "type": "vet",   "cost":  200.00},
+  {"date": "2014 11 17", "desc": "Clindamicina",                    "type": "drug",  "cost":  280.00},
+  {"date": "2014 11 17", "desc": "taxi: Don Ricardo",               "type": "xport", "cost":  800.00},
+
+  {"date": "2015 02 02", "desc": "X-ray",                           "type": "vet",   "cost":  400.00},
+  {"date": "2015 02 02", "desc": "Rimadyl",                         "type": "drug",  "cost":   24.00},
+  {"date": "2015 02 02", "desc": "TopDog (210 tabs)",               "type": "drug",  "cost": 1600.00},
+  {"date": "2015 02 02", "desc": "Curcuma/Bromelin",                "type": "drug",  "cost":  200.00},
+  {"date": "2015 02 02", "desc": "car rental",                      "type": "xport", "cost":  800.00},
+
+  {"date": "2015 03 24", "desc": "Alicia consulta",                 "type": "vet",   "cost":  200.00},
+  {"date": "2015 03 24", "desc": "Bach flower remedy",              "type": "drug",  "cost":  200.00}
 ]
