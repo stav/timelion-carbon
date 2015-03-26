@@ -73,10 +73,11 @@ controller('EventsController', function ($scope, EventsDataService) {
   });
 }).
 
-controller('EventController', function (MedsDataService) {
+controller('EventController', function ($scope, MedsDataService) {
   var self = this;
   self.meds = [];
   self.meds_indexes = [];
+  $scope.Math = window.Math;
 
   MedsDataService.success(function (data) {
     self.meds = data;

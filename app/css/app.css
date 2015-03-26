@@ -65,48 +65,28 @@
 
 /* badges */
 
-.badge.w1 {
+.badge.B1 {
   background-color: red;
 }
-.badge.w2 {
+.badge.B2 {
   background-color: orange;
 }
-.badge.w3 {
+.badge.B3 {
   background-color: gold;
 }
-.badge.w4 {
+.badge.B4 {
   background-color: green;
 }
-.badge.w5 {
+.badge.B5 {
   background-color: blue;
 }
-.badge.w6 {
+.badge.B6 {
   background-color: indigo;
 }
-.badge.w7 {
+.badge.B0 {
   background-color: violet;
 }
-.badge.w8 {
-  background-color: red;
-}
-.badge.w9 {
-  background-color: orange;
-}
-.badge.w10 {
-  background-color: gold;
-}
-.badge.w11 {
-  background-color: green;
-}
-.badge.w12 {
-  background-color: blue;
-}
-.badge.w13 {
-  background-color: indigo;
-}
-.badge.w14 {
-  background-color: violet;
-}
+
 .miceli {
   background-color: green;
 }
