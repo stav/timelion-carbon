@@ -48,7 +48,7 @@
           </td>
           <td ng-show="!E.hasMeds()" colspan="{{E.meds.length}}}" ng-bind="event.notes"></td>
           <td ng-show="E.hasMeds()" ng-repeat="i in E.meds_indexes">
-            <span ng-show="E.hasDosage(i)">
+            <span ng-show="E.hasDosage(i)" title="{{ E.meds[i].name }}">
               <span
                 class="label"
                 ng-repeat="dose in E.getMed(i) track by $index"
