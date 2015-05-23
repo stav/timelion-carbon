@@ -40,13 +40,16 @@
             <span ng-bind="E.day"    ng-show="E.day > 0"    title="Days after initial surgury"  class="badge B{{ Math.floor((E.day - 1) / 30 + 1) % 7 }}"></span>
             <span ng-bind="E.week"   ng-show="E.day > 0"    title="Weeks after initial surgury" class="badge B{{ E.week % 7 }}"></span>
           </td>
-          <td> <span class="glyphicon lyphicon glyphicon-list-alt" ng-show="event.notes"></span> </td>
+          <td>
+            <span class="glyphicon lyphicon glyphicon-list-alt" ng-show="event.notes" title="Note for this date"></span>
+            <span class="glyphicon lyphicon glyphicon-picture" ng-show="event.notes | xRay" title="X-ray for this date"></span>
+          </td>
           <td ng-bind="event.date"></td>
           <td>
             <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
             <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
           </td>
-          <td ng-show="!E.hasMeds()" colspan="{{E.meds.length}}}" ng-bind="event.notes" class="notes"></td>
+          <td ng-show="!E.hasMeds()" colspan="{{E.meds.length}}}" ng-bind-html="event.notes | rawHtml" class="notes"></td>
           <td ng-show="E.hasMeds()" ng-repeat="i in E.meds_indexes" class="meds">
             <span ng-show="E.hasDosage(i)" title="{{ E.meds[i].name }}">
               <span
