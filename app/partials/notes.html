@@ -26,7 +26,7 @@
             <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
             <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
           </td>
-          <td ng-bind="event.notes"></td>
+          <td ng-bind-html="event.notes | rawHtml"></td>
       </tr>
     </tbody>
     <tfoot ng-controller="MedController">
