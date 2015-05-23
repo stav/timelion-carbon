@@ -6,7 +6,7 @@ module('myApp.services', []).
 
 /* Services */
 
-value('version', '0.2').
+value('version', '0.2.1').
 
 factory('FileDataService', function ($http, $routeParams) {
     var url = 'data/' + $routeParams.file + '.json';
