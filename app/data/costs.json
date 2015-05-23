@@ -80,5 +80,15 @@
   {"date": "2015 03 24", "desc": "Bach flower remedy",              "type": "drug",  "cost":  200.00},
 
   {"date": "2015 04 20", "desc": "X-ray (Placa chica)",             "type": "vet",   "cost":  350.00},
-  {"date": "2015 04 20", "desc": "car rental ($30 tip clean hair)", "type": "xport", "cost":  730.00}
+  {"date": "2015 04 20", "desc": "car rental ($30 tip clean hair)", "type": "xport", "cost":  730.00},
+
+  {"date": "2015 05 18", "desc": "Miceli surgery: remove placa",    "type": "vet",   "cost": 2000.00},
+  {"date": "2015 05 18", "desc": "Hospitalizacion (9 day, chrgd 4)","type": "vet",   "cost": 1200.00},
+  {"date": "2015 05 18", "desc": "chip",                            "type": "vet",   "cost": 1300.00},
+  {"date": "2015 06 18", "desc": "Rimadyl",                         "type": "drug",  "cost":  230.00},
+  {"date": "2015 06 18", "desc": "Enrofloxacina",                   "type": "drug",  "cost":  140.00},
+  {"date": "2015 06 18", "desc": "Clindamicina",                    "type": "drug",  "cost":  280.00},
+  {"date": "2015 06 18", "desc": "Omeprazol",                       "type": "drug",  "cost":  240.00},
+  {"date": "2015 05 22", "desc": "X-ray",                           "type": "vet",   "cost":  250.00},
+  {"date": "2015 05 22", "desc": "Dr. Eugene",                      "type": "vet",   "cost":  150.00}
 ]
