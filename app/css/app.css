@@ -39,6 +39,9 @@
 
 /* table */
 
+.table-notes {
+  max-width: 1170px;
+}
 .table td {
   white-space: nowrap;
 }
