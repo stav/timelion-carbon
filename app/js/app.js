@@ -15,10 +15,11 @@ module('myApp', [
 // Route configuration
 
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
-  $routeProvider.when('/meds',                    {templateUrl: 'partials/HTML.html'});
-  $routeProvider.when('/cost',                    {redirectTo: '/file/costs'});
-  $routeProvider.when('/file/:file',              {templateUrl: 'partials/ngGrid.html', controller: 'DataController'});
-  $routeProvider.when('/file/:file/files/:files', {templateUrl: 'partials/ngGrid.html', controller: 'DataController'});
+  $routeProvider.when('/meds',                    {templateUrl: 'partials/meds.html'});
+  $routeProvider.when('/notes',                   {templateUrl: 'partials/notes.html'});
+  $routeProvider.when('/costs',                   {redirectTo: '/file/costs'});
+  $routeProvider.when('/file/:file',              {templateUrl: 'partials/costs.html', controller: 'DataController'});
+  // $routeProvider.when('/file/:file/files/:files', {templateUrl: 'partials/ngGrid.html', controller: 'DataController'});
   $routeProvider.otherwise({templateUrl: 'partials/front.html'});
 
   // Turn off caching for devel

@@ -1,0 +1,69 @@
+  <table class="table table-striped table-hover">
+    <caption> Notes </caption>
+    <thead ng-controller="MedController">
+      <tr>
+          <th style="text-align: right"> Day/Wk </th>
+          <th>        </th>
+          <th> Date   </th>
+          <th> Clinic </th>
+          <th> Notes  </th>
+      </tr>
+    </thead>
+    <tbody ng-controller="EventsController">
+      <tr
+        ng-repeat="event in events"
+        ng-controller="EventController as E"
+        ng-init="E.init($index, event)"
+        >
+          <td align="right">
+            <span ng-bind="E.prpday" ng-show="E.prpday > 0" title="Days after PrP surgury"      class="badge"></span>
+            <span ng-bind="E.day"    ng-show="E.day > 0"    title="Days after initial surgury"  class="badge B{{ Math.floor((E.day - 1) / 30 + 1) % 7 }}"></span>
+            <span ng-bind="E.week"   ng-show="E.day > 0"    title="Weeks after initial surgury" class="badge B{{ E.week % 7 }}"></span>
+          </td>
+          <td> <span class="glyphicon lyphicon glyphicon-list-alt" ng-show="event.notes"></span> </td>
+          <td ng-bind="event.date"></td>
+          <td>
+            <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
+            <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
+          </td>
+          <td ng-bind="event.notes"></td>
+      </tr>
+    </tbody>
+    <tfoot ng-controller="MedController">
+      <tr>
+          <th style="text-align: right"> Day/Wk </th>
+          <th>        </th>
+          <th> Date   </th>
+          <th> Clinic </th>
+          <th> Notes  </th>
+      </tr>
+    </tfoot>
+  </table>
+
+  <section>
+    <div class="hero-unit">
+      <div class="container">
+        <p>
+         <span class="label label-primary">Zosia observed</span>
+         <span class="label label-default">Zosia did not observe</span>
+         Visits to clinics
+         <span class="badge miceli">Miceli</span>:
+         <span class="badge miceli">C</span>Carbon
+         <span class="badge miceli">Z</span>Zosia
+         <span class="badge miceli">A</span>Aga
+         <span class="badge miceli">R</span>Rocio
+         <span class="badge miceli">S</span>Steven
+         <span class="badge marina">Marina</span>:
+         <span class="badge marina">C</span>Carbon
+         <span class="badge marina">Z</span>Zosia
+         <span class="badge marina">S</span>Steven
+        </p>
+        <p class="alert alert-info">
+         <span class="glyphicon glyphicon-hand-right"></span>
+         Notes for <strong>June 2nd - 5th</strong> as well as <strong>Sept 8th
+           - 13th</strong>: Probably he got some hard-core opiates in the Clinic
+           but we are not sure what he actually got.
+        </p>
+      </div>
+    </div>
+  </section>
