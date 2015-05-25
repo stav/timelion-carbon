@@ -12,13 +12,13 @@ filter('interpolate', ['version', function( version ) {
   };
 }]).
 
-filter('rawHtml', ['$sce', function($sce){
+filter('rawHtml', ['$sce', function( $sce ){
   return function( value ) {
     return $sce.trustAsHtml( value );
   };
 }]).
 
-filter('xRay', [function(){
+filter('xRay', [function() {
   return function( note ) {
     return note.indexOf('Carbon-radiografia') > -1;
   };

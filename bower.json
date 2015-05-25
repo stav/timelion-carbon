@@ -1,7 +1,7 @@
 {
   "name": "timelion-carbon",
   "description": "A log of drugs my dog was on.",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "homepage": "https://github.com/stav/timelion-carbon",
   "license": "MIT",
   "private": true,

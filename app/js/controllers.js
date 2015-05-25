@@ -4,7 +4,7 @@ module('myApp.controllers', []).
 
 /* Controllers */
 
-controller('DataController', function ($scope, $routeParams, $templateCache, FileDataService) {
+controller('DataFileController', function ($scope, $routeParams, $templateCache, FileDataService) {
   $scope.theData = [];
   $scope.name = $routeParams.file;
   $scope.total = 0;
@@ -36,9 +36,7 @@ controller('DataController', function ($scope, $routeParams, $templateCache, Fil
     }
   };
 
-  /* API code goes here */
-               // .success(function (data, status, headers, config) {
-  FileDataService.success(function (data) {
+  FileDataService.success(function (data, status, headers, config) {
     // Pop commands of the data
     for (var i = data.length - 1; i >= 0; i--) {
       if (angular.isDefined(data[i].timelion)) {
@@ -66,11 +64,9 @@ controller('MedController', function ($scope, MedsDataService) {
 }).
 
 controller('EventsController', function ($scope, EventsDataService) {
-  $scope.events = [];
 
-  EventsDataService.success(function (data) {
-    $scope.events = data;
-  });
+  $scope.dates = EventsDataService.dates;
+  $scope.events = EventsDataService.events;
 }).
 
 controller('EventController', function ($scope, MedsDataService) {
@@ -96,10 +92,10 @@ controller('EventController', function ($scope, MedsDataService) {
     return this.event.meds.length > med ? this.event.meds[med] : [];
   };
   this.getClinicVisitors = function (clinic) {
-    return this.event.clinic[clinic].split('');
+    return this.event.clinics[clinic].split('');
   };
   this.atClinic = function (clinic) {
-    return this.event.clinic[clinic].length > 0;
+    return this.event.clinics[clinic].length > 0;
   };
   this.hasMeds = function () {
     // if (!angular.isArray(this.event.meds)) return false;
