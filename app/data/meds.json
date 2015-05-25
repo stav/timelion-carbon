@@ -54,15 +54,6 @@
       "html": "An <u>antibiotic</u> useful for the treatment of a number of infections. It is of the lincosamide class. It is usually used to treat infections with <u>anaerobic bacteria</u>, but can also be used to treat some protozoal diseases, such as malaria. It is a common topical treatment for acne and can be useful against some methicillin-resistant Staphylococcus aureus (MRSA) infections."
     },
     {
-      "name": "Cannabis",
-      "engl": "Hemp",
-      "unit": "",
-      "pron": "ˈkænəbɪs",
-      "bran": "Cannabis sativa (L.) <li>Cannabis indica (Lam.) <li>Cannabis ruderalis (Janisch)",
-      "link": "http://www.cannabis-med.org/index.php?tpl=cannabinoidslist&lng=en",
-      "html": "Dosage is in drops; dosage before June 18th is estimated."
-    },
-    {
       "name": "Boron",
       "engl": "Tri-Boron",
       "unit": "mg",
