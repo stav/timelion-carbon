@@ -20,6 +20,6 @@ filter('rawHtml', ['$sce', function($sce){
 
 filter('xRay', [function(){
   return function( note ) {
-    return note.indexOf('a href=') > -1;
+    return note.indexOf('Carbon-radiografia') > -1;
   };
 }]);
