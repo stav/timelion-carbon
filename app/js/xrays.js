@@ -8,7 +8,11 @@
 
   $(document).on("click", ".table-xrays img", function( jqevent ) {
 
-    $('#xrayModalTitle').text(this.src.replace('http://centerstar.org/carbon-images/xrays/', ''));
+    $('#xrayModalTitle').text(this.src.
+      replace('http://centerstar.org/carbon-images/xrays/', '').
+      replace(/[-_]/g, ' ').
+      replace('.jpg', '')
+    );
 
     $('#xrayModalPreview').
       attr('src', this.src).
