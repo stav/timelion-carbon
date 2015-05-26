@@ -75,7 +75,7 @@
       "html": "On 25 Jan 2015 TriFlex is replaced by GlycanAid from TopDog Chewable Supplement"
     },
     {
-      "name": "Probioticos",
+      "name": "Probiotics",
       "engl": "Probiotics",
       "bran": "BioLeven",
       "link": "http://www.gnc.com.mx/index.php/producto/112203002/BL-Bioeleven-probioticos-20m-30-caps",
@@ -88,12 +88,5 @@
       "bran": "GNC",
       "unit": "",
       "html": "Curcuma 600 mg, Bromelin 300 mg<p>Before 25 Jan 2015, Sheeps was using home-made capsulas"
-    },
-    {
-      "name": "Bach Flower",
-      "engl": "Bach flower essence",
-      "bran": "Alicia",
-      "unit": "drop",
-      "html": "Administer PO 4 gotas / 4 veces al dia hasta terminar el frasco. <ul> <li> star of Bethlehem <li> Aspen <li> Beech <li> Centaury <li> Crab apple <li> Rock water </ul>"
     }
 ]
