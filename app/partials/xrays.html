@@ -1,5 +1,57 @@
-  <table class="table table-striped table-hover table-notes container">
+  <table class="table table-xrays container">
     <caption> X-rays </caption>
+    <tbody>
+      <tr>
+        <td>
+          <img class="clickme" title="2014.05.31" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.05.31.jpg">
+          <img class="clickme" title="2014.06.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.06.02_1.jpg">
+          <img class="clickme" title="2014.06.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.06.02_2.jpg">
+          <img class="clickme" title="2014.06.23" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.06.23.jpg">
+          <img class="clickme" title="2014.08.01" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.08.01.jpg">
+          <img class="clickme" title="2014.08.20" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.08.20.jpg">
+          <img class="clickme" title="2014.09.11" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.09.11.jpg">
+          <img class="clickme" title="2014.09.11" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.09.11_after-op.jpg">
+          <img class="clickme" title="2014.10.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.10.02.jpg">
+          <img class="clickme" title="2014.10.11" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.10.11.jpg">
+          <img class="clickme" title="2014.10.11" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.10.11_side.jpg">
+          <img class="clickme" title="2015.02.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.02.02_checkup-united.jpg">
+          <img class="clickme" title="2015.02.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.02.02_checkup-united_2.jpg">
+          <img class="clickme" title="2015.04.20" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.04.20.jpg">
+          <img class="clickme" title="2015.04.20" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.04.20_.jpg">
+          <img class="clickme" title="2015.05.22" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.05.22.jpg">
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <style type="text/css">
+    .table-xrays img {
+      width: 50px;
+      padding: 5px;
+    }
+  </style>
+
+  <script src="js/xrays.js"></script>
+
+  <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">X-ray preview</h4>
+        </div>
+        <div class="modal-body">
+          <img id="imagepreview" title="Click to open full-size." src="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-striped table-hover table-notes container">
     <thead ng-controller="MedController">
       <tr>
           <th style="text-align: right"> Day/Wk </th>
@@ -19,7 +71,7 @@
           <td align="right">
             <span ng-bind="E.prpday" ng-show="E.prpday > 0" title="{{ E.prpday }} Days after PrP surgury"      class="badge"></span>
             <span ng-bind="E.day"    ng-show="E.day > 0"    title="{{ E.day    }} Days after initial surgury"  class="badge B{{ Math.floor((E.day - 1) / 30 + 1) % 7 }}"></span>
-            <span ng-bind="E.week"   ng-show="E.day > 0"    title="{{ E.week   }} Weeks after initial surgury" class="badge B{{ E.week % 7 }}"></span>
+            <span ng-bind="E.week"   ng-show="E.day > 0"    title="Week {{ E.week   }} after initial surgury" class="badge B{{ E.week % 7 }}"></span>
           </td>
           <td>
             <span class="glyphicon lyphicon glyphicon-list-alt" ng-show="event.notes" title="Note for this date"></span>

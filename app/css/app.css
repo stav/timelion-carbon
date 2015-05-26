@@ -39,7 +39,7 @@
 
 /* table */
 
-.table-notes {
+.table-notes, .table-xrays {
   max-width: 800px;
 }
 .table td {
