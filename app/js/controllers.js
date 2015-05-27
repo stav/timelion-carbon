@@ -64,7 +64,6 @@ controller('MedController', function ($scope, MedsDataService) {
 }).
 
 controller('EventsController', function ($scope, EventsDataService) {
-
   $scope.dates = EventsDataService.dates;
   $scope.events = EventsDataService.events;
 }).
@@ -73,7 +72,6 @@ controller('EventController', function ($scope, MedsDataService) {
   var self = this;
   self.meds = [];
   self.meds_indexes = [];
-  $scope.Math = window.Math;
 
   MedsDataService.success(function (data) {
     self.meds = data;
@@ -83,9 +81,10 @@ controller('EventController', function ($scope, MedsDataService) {
   });
 
   this.init = function (index, event) {
-    this.prpday = index - 100;
-    this.day = index - 1;
-    this.week = Math.floor((this.day - 1) / 7) + 1;
+    event.prpday = index - 100;
+    event.day = index - 1;
+    event.week = Math.floor((event.day - 1) / 7) + 1;
+    // "badge B{{ Math.floor((event.day - 1) / 30 + 1) % 7 }}"
     this.event = event;
   };
   this.getMed = function (med) {

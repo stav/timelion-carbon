@@ -2,7 +2,7 @@
 
 const
 
-    version = '0.3.0',
+    version = '0.3.1',
     days_long = 366,
     start_date = new Date(2014, 4, 31);
 
@@ -29,11 +29,7 @@ service('DatesDataService', function ( range ) {
 }).
 
 service('EventsDataService', function ( $q, $http, DatesDataService, EventsClinicDataService, EventsNotesDataService, EventsMedsDataService ) {
-    var self = this,
-        events = {},
-        date_locale = {},
-        date_options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' },
-        _each = angular.forEach;
+    var self = this;
 
     this.dates = DatesDataService.dates;
     this.events = [];
@@ -53,56 +49,7 @@ service('EventsDataService', function ( $q, $http, DatesDataService, EventsClini
         self.notes = null;
         self.meds = null;
     }).
-    finally( function() {
-        // push all dates to events object
-        _each( self.dates, function( date ) {
-            events[ date ] = {
-                date: date.toLocaleDateString(date_locale, date_options),
-                clinics: ["", ""],
-                notes: "",
-                meds: []
-            };
-        });
-
-        // add all clinics to events object
-        _each( self.clinics, function( object, index ) {
-            _each( object, function( clinics, date_string ) {
-                var date = new Date(date_string);
-                if ( date in events )
-                    events[ date ]['clinics'] = clinics;
-                else
-                    console.log('Error: ' + date + ' not found for clinics ' + clinics);
-            });
-        });
-
-        // add all notes to events object
-        _each( self.notes, function( object, index ) {
-            _each( object, function( notes, date_string ) {
-                var date = new Date(date_string);
-                if ( date in events )
-                    events[ date ]['notes'] = notes;
-                // else
-                //     console.log('Error: ' + date + ' not found (notes)');
-            });
-        });
-
-        // add all meds to events object
-        _each( self.meds, function( object, index ) {
-            _each( object, function( meds, date_string ) {
-                var date = new Date(date_string);
-                if ( date in events )
-                    events[ date ]['meds'] = meds;
-                // else
-                //     console.log('Error: ' + date + ' not found (meds)');
-            });
-        });
-
-        // re-order events object into events array
-        _each( self.dates, function( date ) {
-            if ( date in events )
-                self.events.push(events[ date ]);
-        });
-    }); // finally
+    finally( function () { events_data_service( self ) } );
 }). // EventsDataService
 
 /* Factories */
@@ -127,3 +74,51 @@ factory('EventsMedsDataService', function ( $http ) {
 factory('MedsDataService', function ( $http ) {
     return $http({ method: 'GET', url: 'data/meds.json' });
 });
+
+/* Functions */
+
+function events_data_service ( self ) {
+    var
+        events = new Events(),
+        date_locale = {},
+        date_options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+
+    function Events () {
+        this.set = function ( name, collection ) {
+            $.each( collection, function( i, o ) {
+                var date_string = Object.keys( o )[0],
+                    value = o[ date_string ],
+                    date = new Date( date_string );
+                if ( date in events )
+                    events[ date ][name] = value;
+                // else
+                //     console.log('Error: ' +
+                //         date + ' not found for ' + name + ': ' + clinics);
+            });
+            return this;
+        };
+    }
+
+    // push all dates to events object with default values
+    angular.forEach( self.dates, function( date ) {
+        events[ date ] = {
+            date: date.toLocaleDateString(date_locale, date_options),
+            clinics: ["", ""],
+            notes: "",
+            meds: []
+        };
+    });
+
+    // update events object with our data
+    events.set('clinics', self.clinics)
+          .set('notes', self.notes)
+          .set('meds', self.meds)
+          ;
+
+    // re-order events object into events array
+    $.each( self.dates, function( index, date ) {
+        if ( date in events ) {
+            self.events.push( events[ date ] );
+        }
+    });
+}
