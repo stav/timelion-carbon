@@ -18,6 +18,13 @@ directive('tcLegend', function() {
     };
 }).
 
+directive('tcMedlist', function () {
+    return {
+        restrict: 'A',
+        templateUrl: 'partials/medlist.html'
+    };
+}).
+
 directive('tcVersion', ['version', function(version) {
     return {
         restrict: 'A',
@@ -26,7 +33,7 @@ directive('tcVersion', ['version', function(version) {
 }]).
 
 directive('bsPopover', function () {
-  function popover_tooltip ( scope, element, attrs ) {
+  function popover_tooltip () {
     jQuery("[data-toggle='popover']").popover();
     jQuery("[data-toggle='tooltip']").tooltip();
   };
