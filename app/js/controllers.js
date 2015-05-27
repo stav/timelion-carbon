@@ -64,7 +64,6 @@ controller('MedController', function ($scope, MedsDataService) {
 }).
 
 controller('EventsController', function ($scope, EventsDataService) {
-  $scope.dates = EventsDataService.dates;
   $scope.events = EventsDataService.events;
 }).
 

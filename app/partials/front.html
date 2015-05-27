@@ -31,7 +31,8 @@
           ng-repeat="event in events"
           ng-controller="EventController as E"
           ng-init="E.init($index, event)"
-          ng-show="event.notes">
+          ng-show="event.notes"
+          >
             <td align="right">
                 <span ng-bind="event.day" ng-show="event.day > 0" title="{{ event.day }} Days after initial surgury" class="badge"></span>
             </td>

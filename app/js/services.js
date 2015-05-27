@@ -28,7 +28,7 @@ service('DatesDataService', function ( range ) {
     this.dates = dates;
 }).
 
-service('EventsDataService', function ( $q, $http, DatesDataService, EventsClinicDataService, EventsNotesDataService, EventsMedsDataService ) {
+service('EventsDataService', function ( $q, DatesDataService, EventsClinicDataService, EventsNotesDataService, EventsMedsDataService ) {
     var self = this;
 
     this.dates = DatesDataService.dates;

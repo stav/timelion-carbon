@@ -73,21 +73,11 @@
         ng-init="E.init($index, event)"
         ng-show="event.notes | xRay"
         >
-          <td align="right">
-            <span ng-bind="event.prpday" ng-show="event.prpday > 0" title="{{ event.prpday }} Days after PrP surgury"     class="badge"></span>
-            <span ng-bind="event.day"    ng-show="event.day > 0"    title="{{ event.day    }} Days after initial surgury" class="badge"></span>
-            <span ng-bind="event.week"   ng-show="event.day > 0"    title="Week {{ event.week }} after initial surgury"   class="badge"></span>
-          </td>
-          <td>
-            <span class="glyphicon lyphicon glyphicon-list-alt" ng-show="event.notes" title="Note for this date"></span>
-            <span class="glyphicon lyphicon glyphicon-picture" ng-show="event.notes | xRay" title="X-ray for this date"></span>
-          </td>
-          <td class="event-date" ng-bind="event.date"></td>
-          <td>
-            <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
-            <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
-          </td>
-          <td class="notes" ng-bind-html="event.notes | rawHtml"></td>
+          <td ng-include="'partials/days.html'" align="right"></td>
+          <td ng-include="'partials/glyphs.html'"></td>
+          <td ng-bind="event.date" class="event-date"></td>
+          <td ng-include="'partials/clinics.html'"></td>
+          <td ng-bind-html="event.notes | rawHtml" class="notes"></td>
       </tr>
     </tbody>
     <tfoot ng-controller="MedController">

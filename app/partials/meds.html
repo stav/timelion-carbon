@@ -34,21 +34,12 @@
         ng-repeat="event in events"
         ng-controller="EventController as E"
         ng-init="E.init($index, event)"
-        title="{{event.notes}}">
-          <td align="right">
-            <span ng-bind="event.prpday" ng-show="event.prpday > 0" title="{{ event.prpday }} Days after PrP surgury"     class="badge"></span>
-            <span ng-bind="event.day"    ng-show="event.day > 0"    title="{{ event.day    }} Days after initial surgury" class="badge"></span>
-            <span ng-bind="event.week"   ng-show="event.day > 0"    title="Week {{ event.week }} after initial surgury"   class="badge"></span>
-          </td>
-          <td>
-            <span class="glyphicon lyphicon glyphicon-list-alt" ng-show="event.notes" title="Note for this date"></span>
-            <span class="glyphicon lyphicon glyphicon-picture" ng-show="event.notes | xRay" title="X-ray for this date"></span>
-          </td>
-          <td class="event-date" ng-bind="event.date"></td>
-          <td>
-            <span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
-            <span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
-          </td>
+        title="{{event.notes}}"
+        >
+          <td ng-include="'partials/days.html'" align="right"></td>
+          <td ng-include="'partials/glyphs.html'"></td>
+          <td ng-bind="event.date" class="event-date"></td>
+          <td ng-include="'partials/clinics.html'"></td>
           <td ng-show="!E.hasMeds()" colspan="{{E.meds.length}}}" ng-bind-html="event.notes | rawHtml" class="notes"></td>
           <td ng-show="E.hasMeds()" ng-repeat="i in E.meds_indexes" class="meds">
             <span ng-show="E.hasDosage(i)" title="{{ E.meds[i].name }}">
