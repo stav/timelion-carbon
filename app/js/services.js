@@ -31,6 +31,8 @@ service('DatesDataService', function ( range ) {
 service('EventsDataService', function ( $q, $http, DatesDataService, EventsClinicDataService, EventsNotesDataService, EventsMedsDataService ) {
     var self = this,
         events = {},
+        date_locale = {},
+        date_options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' },
         _each = angular.forEach;
 
     this.dates = DatesDataService.dates;
@@ -54,7 +56,12 @@ service('EventsDataService', function ( $q, $http, DatesDataService, EventsClini
     finally( function() {
         // push all dates to events object
         _each( self.dates, function( date ) {
-            events[ date ] = {date: date, clinics: ["", ""], notes: "", meds: []};
+            events[ date ] = {
+                date: date.toLocaleDateString(date_locale, date_options),
+                clinics: ["", ""],
+                notes: "",
+                meds: []
+            };
         });
 
         // add all clinics to events object

@@ -54,6 +54,9 @@
 .table-hover tbody tr:hover td {
   background-color: #CDE1FF;
 }
+.table td.event-date {
+  text-align: right;
+}
 
 /* grid*/
 
