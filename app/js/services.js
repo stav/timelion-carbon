@@ -2,7 +2,7 @@
 
 const
 
-    version = '0.3.1',
+    version = '0.3.2',
     days_long = 366,
     start_date = new Date(2014, 4, 31);
 
@@ -90,7 +90,7 @@ function events_data_service ( self ) {
                     value = o[ date_string ],
                     date = new Date( date_string );
                 if ( date in events )
-                    events[ date ][name] = value;
+                    events[ date ][ name ] = value;
                 // else
                 //     console.log('Error: ' +
                 //         date + ' not found for ' + name + ': ' + clinics);
