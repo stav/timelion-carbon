@@ -1,6 +1,6 @@
 'use strict';
 
-const
+var
 
     version = '0.3.2',
     days_long = 366,
