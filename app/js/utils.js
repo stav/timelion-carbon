@@ -8,10 +8,6 @@ module('myApp.utils', []).
 
 value('range', range);
 
-// service('rangeService', function() {
-//   this.range = range;
-// });
-
 /**
  * Creates a range of numbers in an array, starting at a specified number and
  * ending before a different specified number.

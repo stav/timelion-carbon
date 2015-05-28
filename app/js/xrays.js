@@ -25,7 +25,7 @@ var image_map = {
     "Carbon-radiografia-2015.05.22.jpg"                  : "https://www.dropbox.com/s/vgerarbyfvz7f1q/Carbon-radiografia-2015.05.22.jpg"
 };
 
-$(document).on("click", ".table-xrays img", function( jqevent ) {
+$(document).on("click", ".xray-images img", function( jqevent ) {
 
     var filename = this.src.
         replace('http://centerstar.org/carbon-images/xrays/', '');

@@ -2,7 +2,7 @@
 
 const
 
-    version = '0.3.1',
+    version = '0.3.2',
     days_long = 366,
     start_date = new Date(2014, 4, 31);
 
@@ -28,16 +28,16 @@ service('DatesDataService', function ( range ) {
     this.dates = dates;
 }).
 
-service('EventsDataService', function ( $q, $http, DatesDataService, EventsClinicDataService, EventsNotesDataService, EventsMedsDataService ) {
+service('EventsDataService', function ( $q, $http, DatesDataService ) {
     var self = this;
 
     this.dates = DatesDataService.dates;
     this.events = [];
 
     $q.all([
-        EventsClinicDataService,
-        EventsNotesDataService,
-        EventsMedsDataService
+        $http({ method: 'GET', url: 'data/events.clinic.json' }),
+        $http({ method: 'GET', url: 'data/events.notes.json' }),
+        $http({ method: 'GET', url: 'data/events.meds.json' })
     ]).
     then( function ( responses ) {
         self.clinics = responses[0].data;
@@ -59,18 +59,6 @@ factory('FileDataService', function ( $http, $routeParams ) {
     return $http({ method: 'GET', url: url });
 }).
 
-factory('EventsClinicDataService', function ( $http ) {
-    return $http({ method: 'GET', url: 'data/events.clinic.json' });
-}).
-
-factory('EventsNotesDataService', function ( $http ) {
-    return $http({ method: 'GET', url: 'data/events.notes.json' });
-}).
-
-factory('EventsMedsDataService', function ( $http ) {
-    return $http({ method: 'GET', url: 'data/events.meds.json' });
-}).
-
 factory('MedsDataService', function ( $http ) {
     return $http({ method: 'GET', url: 'data/meds.json' });
 });
@@ -90,7 +78,7 @@ function events_data_service ( self ) {
                     value = o[ date_string ],
                     date = new Date( date_string );
                 if ( date in events )
-                    events[ date ][name] = value;
+                    events[ date ][ name ] = value;
                 // else
                 //     console.log('Error: ' +
                 //         date + ' not found for ' + name + ': ' + clinics);
