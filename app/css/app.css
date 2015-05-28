@@ -111,7 +111,8 @@
 .data-container {
   text-align: center;
 }
-.banner {
+.page-header {
+  text-align: center;
   font-size: 2em;
 }
 #plug {
