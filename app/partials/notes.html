@@ -1,15 +1,7 @@
 <p class="page-header"> Notes </p>
 
 <table class="table table-striped table-hover table-notes container">
-    <thead ng-controller="MedController">
-        <tr>
-            <th style="text-align: right"> Day/Wk </th>
-            <th>        </th>
-            <th style="text-align: center"> Date </th>
-            <th> Clinic </th>
-            <th> Notes  </th>
-        </tr>
-    </thead>
+    <thead ng-controller="MedController" tc-col-labels></thead>
     <tbody ng-controller="EventsController">
         <tr
           ng-repeat="event in events"
@@ -24,15 +16,7 @@
             <td ng-bind-html="event.notes | rawHtml" class="notes"></td>
         </tr>
     </tbody>
-    <tfoot ng-controller="MedController">
-        <tr>
-            <th style="text-align: right"> Day/Wk </th>
-            <th>        </th>
-            <th> Date   </th>
-            <th> Clinic </th>
-            <th> Notes  </th>
-        </tr>
-    </tfoot>
+    <tfoot ng-controller="MedController" tc-col-labels></tfoot>
 </table>
 
 <tc-legend></tc-legend>

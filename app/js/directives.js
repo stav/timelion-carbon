@@ -18,10 +18,13 @@ directive('tcLegend', function() {
     };
 }).
 
-directive('tcMedlist', function () {
+directive('tcColLabels', function () {
     return {
         restrict: 'A',
-        templateUrl: 'partials/medlist.html'
+        templateUrl: function ( element, attr ) {
+            var type = attr.type || 'default';
+            return 'partials/tablerow-'+ type +'.html'
+        }
     };
 }).
 

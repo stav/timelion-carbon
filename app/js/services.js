@@ -28,16 +28,16 @@ service('DatesDataService', function ( range ) {
     this.dates = dates;
 }).
 
-service('EventsDataService', function ( $q, DatesDataService, EventsClinicDataService, EventsNotesDataService, EventsMedsDataService ) {
+service('EventsDataService', function ( $q, $http, DatesDataService ) {
     var self = this;
 
     this.dates = DatesDataService.dates;
     this.events = [];
 
     $q.all([
-        EventsClinicDataService,
-        EventsNotesDataService,
-        EventsMedsDataService
+        $http({ method: 'GET', url: 'data/events.clinic.json' }),
+        $http({ method: 'GET', url: 'data/events.notes.json' }),
+        $http({ method: 'GET', url: 'data/events.meds.json' })
     ]).
     then( function ( responses ) {
         self.clinics = responses[0].data;
@@ -57,18 +57,6 @@ service('EventsDataService', function ( $q, DatesDataService, EventsClinicDataSe
 factory('FileDataService', function ( $http, $routeParams ) {
     var url = 'data/' + $routeParams.file + '.json';
     return $http({ method: 'GET', url: url });
-}).
-
-factory('EventsClinicDataService', function ( $http ) {
-    return $http({ method: 'GET', url: 'data/events.clinic.json' });
-}).
-
-factory('EventsNotesDataService', function ( $http ) {
-    return $http({ method: 'GET', url: 'data/events.notes.json' });
-}).
-
-factory('EventsMedsDataService', function ( $http ) {
-    return $http({ method: 'GET', url: 'data/events.meds.json' });
 }).
 
 factory('MedsDataService', function ( $http ) {

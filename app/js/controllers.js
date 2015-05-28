@@ -113,21 +113,24 @@ controller('DataFileController', function ($scope, $routeParams, $templateCache,
     }
   };
 
-  FileDataService.success(function (data, status, headers, config) {
+  FileDataService.success(function ( data, status, headers, config ) {
     // Pop commands of the data
     for (var i = data.length - 1; i >= 0; i--) {
-      if (angular.isDefined(data[i].timelion)) {
-        if (angular.isDefined(data[i].timelion.name))
-          $scope.name = data[i].timelion.name;
-        if (angular.isDefined(data[i].timelion.total))
-          $scope.total_fieldname = data[i].timelion.total;
+
+      if (angular.isDefined( data[ i ].timelion )) {
+
+        if (angular.isDefined( data[ i ].timelion.name ))
+          $scope.name = data[ i ].timelion.name;
+
+        if (angular.isDefined( data[ i ].timelion.total ))
+          $scope.total_fieldname = data[ i ].timelion.total;
       }
       else
-        $scope.theData.push(data[i]); // data
+        $scope.theData.push( data[ i ]); // data
     }
     // Calc total
-    $scope.theData.forEach(function (transaction) {
-      $scope.total += transaction[$scope.total_fieldname];
+    $scope.theData.forEach(function ( transaction ) {
+      $scope.total += transaction[ $scope.total_fieldname ];
     });
   });
 });

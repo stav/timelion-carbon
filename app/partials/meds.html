@@ -1,7 +1,7 @@
 <p class="page-header"> Meds </p>
 
 <table class="table table-striped table-hover">
-    <thead ng-controller="MedController" tc-medlist="true"></thead>
+    <thead ng-controller="MedController" tc-col-labels type="meds"></thead>
     <tbody ng-controller="EventsController">
         <tr
           ng-repeat="event in events"
@@ -26,7 +26,7 @@
             </td>
         </tr>
     </tbody>
-    <tfoot ng-controller="MedController" tc-medlist="true"></tfoot>
+    <tfoot ng-controller="MedController" tc-col-labels type="meds"></tfoot>
 </table>
 
 <tc-legend observers="true" extranotes="true"></tc-legend>
