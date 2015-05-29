@@ -3,7 +3,7 @@
 var
 
     version = '0.3.2',
-    days_long = 366,
+    days_long = 373,
     start_date = new Date(2014, 4, 31);
 
 angular.
