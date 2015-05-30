@@ -2,7 +2,7 @@
 
 var
 
-    version = '0.3.2',
+    version = '0.3.3',
     days_long = 373,
     start_date = new Date(2014, 4, 31);
 
@@ -17,21 +17,9 @@ constant('days_long', days_long).
 
 /* Services */
 
-service('DatesDataService', function ( range ) {
-    var dates = [];
-
-    $.each( range( days_long ), function( index, value ) {
-        var date = new Date( start_date.getTime());
-        date.setDate( start_date.getDate() + value );
-        dates.push( date );
-    });
-    this.dates = dates;
-}).
-
-service('EventsDataService', function ( $q, $http, DatesDataService ) {
+service('EventsDataService', function ( $q, $http ) {
     var self = this;
 
-    this.dates = DatesDataService.dates;
     this.events = [];
 
     $q.all([
@@ -50,7 +38,7 @@ service('EventsDataService', function ( $q, $http, DatesDataService ) {
         self.meds = null;
     }).
     finally( function () { events_data_service( self ) } );
-}). // EventsDataService
+}).
 
 /* Factories */
 
@@ -68,11 +56,18 @@ factory('MedsDataService', function ( $http ) {
 function events_data_service ( self ) {
     var
         events = new Events(),
+        dates = [],
         date_locale = {},
-        date_options = { weekday: 'short',
-                         year: 'numeric',
+        date_options = { year: 'numeric',
                          month: 'short',
-                         day: 'numeric' };
+                         day: 'numeric',
+                         weekday: 'short'};
+
+    $.each( range( days_long ), function( index, value ) {
+        var date = new Date( start_date.getTime());
+        date.setDate( start_date.getDate() + value );
+        dates.push( date );
+    });
 
     function Events () {
         this.set = function ( name, collection ) {
@@ -95,7 +90,7 @@ function events_data_service ( self ) {
     }
 
     // push all dates to events object with default values
-    angular.forEach( self.dates, function( date ) {
+    angular.forEach( dates, function( date ) {
         events[ date ] = {
             date: date.toLocaleDateString(date_locale, date_options),
             clinic: "",
@@ -111,7 +106,7 @@ function events_data_service ( self ) {
           ;
 
     // re-order events object into events array
-    $.each( self.dates, function( index, date ) {
+    $.each( dates, function( index, date ) {
         if ( date in events ) {
             self.events.push( events[ date ] );
         }
