@@ -42,20 +42,23 @@
 .table-notes, .table-xrays {
   max-width: 800px;
 }
+.table-hover tbody tr:hover td {
+  background-color: #CDE1FF;
+}
 .table td {
   white-space: nowrap;
 }
 .table td.notes, .table td.meds {
   white-space: inherit;
 }
-.table caption {
-  font-size: 2em;
-}
-.table-hover tbody tr:hover td {
-  background-color: #CDE1FF;
-}
 .table td.event-date {
   text-align: right;
+}
+.table td.clinics {
+  text-align: right;
+}
+.table caption {
+  font-size: 2em;
 }
 
 /* grid*/
@@ -77,32 +80,10 @@
 
 /* badges */
 
-.badge.B1 {
-  background-color: red;
-}
-.badge.B2 {
-  background-color: orange;
-}
-.badge.B3 {
-  background-color: gold;
-}
-.badge.B4 {
+.miceli-clinic {
   background-color: green;
 }
-.badge.B5 {
-  background-color: blue;
-}
-.badge.B6 {
-  background-color: indigo;
-}
-.badge.B0 {
-  background-color: violet;
-}
-
-.miceli {
-  background-color: green;
-}
-.marina {
+.other-clinic {
   background-color: cyan;
 }
 

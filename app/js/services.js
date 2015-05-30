@@ -20,9 +20,9 @@ constant('days_long', days_long).
 service('DatesDataService', function ( range ) {
     var dates = [];
 
-    $.each( range(days_long), function( index, value ) {
-        var date = new Date(start_date.getTime());
-        date.setDate(start_date.getDate() + value);
+    $.each( range( days_long ), function( index, value ) {
+        var date = new Date( start_date.getTime());
+        date.setDate( start_date.getDate() + value );
         dates.push( date );
     });
     this.dates = dates;
@@ -69,10 +69,17 @@ function events_data_service ( self ) {
     var
         events = new Events(),
         date_locale = {},
-        date_options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+        date_options = { weekday: 'short',
+                         year: 'numeric',
+                         month: 'short',
+                         day: 'numeric' };
 
     function Events () {
         this.set = function ( name, collection ) {
+        /* Spin thru the collections and install each one-at-a-time
+         * @name: String - The individual event name of the collection
+         * @collection: Array - date/clinic mapping
+         */
             $.each( collection, function( i, o ) {
                 var date_string = Object.keys( o )[0],
                     value = o[ date_string ],
@@ -81,7 +88,7 @@ function events_data_service ( self ) {
                     events[ date ][ name ] = value;
                 // else
                 //     console.log('Error: ' +
-                //         date + ' not found for ' + name + ': ' + clinics);
+                //         date + ' not found for ' + name);
             });
             return this;
         };
@@ -91,14 +98,14 @@ function events_data_service ( self ) {
     angular.forEach( self.dates, function( date ) {
         events[ date ] = {
             date: date.toLocaleDateString(date_locale, date_options),
-            clinics: ["", ""],
+            clinic: "",
             notes: "",
             meds: []
         };
     });
 
     // update events object with our data
-    events.set('clinics', self.clinics)
+    events.set('clinic', self.clinics)
           .set('notes', self.notes)
           .set('meds', self.meds)
           ;

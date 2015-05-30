@@ -44,11 +44,8 @@ controller('EventController', function ($scope, MedsDataService) {
   this.getMed = function (med) {
     return this.event.meds.length > med ? this.event.meds[med] : [];
   };
-  this.getClinicVisitors = function (clinic) {
-    return this.event.clinics[clinic].split('');
-  };
-  this.atClinic = function (clinic) {
-    return this.event.clinics[clinic].length > 0;
+  this.atMiceli = function () {
+    return this.event.clinic === "M";
   };
   this.hasMeds = function () {
     // if (!angular.isArray(this.event.meds)) return false;

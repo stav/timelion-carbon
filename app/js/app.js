@@ -26,9 +26,9 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
   $routeProvider.otherwise({templateUrl: 'partials/front.html'});
 
   // Turn off caching for devel
-  // $httpProvider.defaults.cache = false;
-  // if (!$httpProvider.defaults.headers.get) $httpProvider.defaults.headers.get = {};
-  // $httpProvider.defaults.headers.get['If-Modified-Since'] = '0';
-  // $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
-  // $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
+  $httpProvider.defaults.cache = false;
+  if (!$httpProvider.defaults.headers.get) $httpProvider.defaults.headers.get = {};
+  $httpProvider.defaults.headers.get['If-Modified-Since'] = '0';
+  $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+  $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
 }]);

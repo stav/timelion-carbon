@@ -1,2 +1,4 @@
-<span class="badge miceli" ng-show="E.atClinic(0)" ng-repeat="person in E.getClinicVisitors(0)" ng-bind="person"></span>
-<span class="badge marina" ng-show="E.atClinic(1)" ng-repeat="person in E.getClinicVisitors(1)" ng-bind="person"></span>
+<span class="badge"
+    ng-class="{'miceli-clinic': E.atMiceli(), 'other-clinic': !E.atMiceli()}"
+    ng-bind="E.event.clinic"
+></span>
