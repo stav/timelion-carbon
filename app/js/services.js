@@ -23,9 +23,9 @@ service('EventsDataService', function ( $q, $http ) {
     this.events = [];
 
     $q.all([
-        $http({ method: 'GET', url: 'data/events.clinic.json' }),
-        $http({ method: 'GET', url: 'data/events.note.json' }),
-        $http({ method: 'GET', url: 'data/events.meds.json' })
+        $http.get('data/events.clinic.json'),
+        $http.get('data/events.note.json'),
+        $http.get('data/events.meds.json')
     ]).
     then( function ( responses ) {
         self.clinics = responses[0].data;
@@ -48,7 +48,7 @@ factory('FileDataService', function ( $http, $routeParams ) {
 }).
 
 factory('MedsDataService', function ( $http ) {
-    return $http({ method: 'GET', url: 'data/meds.json' });
+    return $http.get('data/meds.json');
 });
 
 /* Functions */
