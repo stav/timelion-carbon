@@ -16,10 +16,10 @@ module('myApp', [
 // Route configuration
 
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+  $routeProvider.when('/home',                    {templateUrl: 'partials/home.html'});
   $routeProvider.when('/meds',                    {templateUrl: 'partials/meds.html'});
-  $routeProvider.when('/notes',                   {templateUrl: 'partials/notes.html'});
-  $routeProvider.when('/image',                   {templateUrl: 'partials/image.html'});
   $routeProvider.when('/xrays',                   {templateUrl: 'partials/xrays.html'});
+  $routeProvider.when('/notes',                   {templateUrl: 'partials/notes.html'});
   $routeProvider.when('/costs',                   {redirectTo: '/file/costs'});
   $routeProvider.when('/file/:file',              {templateUrl: 'partials/costs.html', controller: 'DataFileController'});
   // $routeProvider.when('/file/:file/files/:files', {templateUrl: 'partials/ngGrid.html', controller: 'DataFileController'});
