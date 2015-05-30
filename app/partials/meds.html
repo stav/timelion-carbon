@@ -7,7 +7,7 @@
           ng-repeat="event in events"
           ng-controller="EventController as E"
           ng-init="E.init($index, event)"
-          title="{{event.notes}}"
+          ng-attr-title="{{ event.notes }}"
           >
             <td ng-include="'partials/days.html'" align="right"></td>
             <td ng-include="'partials/glyphs.html'"></td>
@@ -15,14 +15,14 @@
             <td ng-include="'partials/clinics.html'" class="clinics"></td>
             <td ng-show="!E.hasMeds()" colspan="{{E.meds.length}}}" ng-bind-html="event.notes | rawHtml" class="notes"></td>
             <td ng-show="E.hasMeds()" ng-repeat="i in E.meds_indexes" class="meds">
-            <span ng-show="E.hasDosage(i)" title="{{ E.meds[i].name }}">
-                <span
-                  class="label"
-                  ng-repeat="dose in E.getMed(i) track by $index"
-                  ng-class="{'label-primary':E.observed(i, $index),'label-default':E.unobserved(i, $index)}">
-                    {{E.med(i, dose)}}
+                <span ng-show="E.hasDosage(i)" ng-attr-title="{{ E.meds[i].name }}">
+                    <span
+                      class="label"
+                      ng-repeat="dose in E.getMed(i) track by $index"
+                      ng-class="{'label-primary':E.observed(i, $index),'label-default':E.unobserved(i, $index)}"
+                      ng-bind="E.med(i, dose)"
+                      ></span>
                 </span>
-            </span>
             </td>
         </tr>
     </tbody>
