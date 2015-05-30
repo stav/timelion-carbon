@@ -24,7 +24,7 @@ service('EventsDataService', function ( $q, $http ) {
 
     $q.all([
         $http({ method: 'GET', url: 'data/events.clinic.json' }),
-        $http({ method: 'GET', url: 'data/events.notes.json' }),
+        $http({ method: 'GET', url: 'data/events.note.json' }),
         $http({ method: 'GET', url: 'data/events.meds.json' })
     ]).
     then( function ( responses ) {
