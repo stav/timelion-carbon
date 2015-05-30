@@ -3,7 +3,7 @@
 var
 
     version = '0.3.3',
-    days_long = 11,
+    days_long = 373,
     start_date = new Date(2014, 4, 31);
 
 angular.
@@ -57,11 +57,10 @@ function events_data_service ( self ) {
     var
         events = new Events(),
         dates = [],
-        date_locale = {},
+        date_locale = 'en-GB',
         date_options = { year: 'numeric',
                          month: 'short',
-                         day: 'numeric',
-                         weekday: 'short'};
+                         day: 'numeric'};
 
     $.each( range( days_long ), function( index, value ) {
         var date = new Date( start_date.getTime());

@@ -1,0 +1,28 @@
+<p class="page-header"> Meds Generator </p>
+ <!--
+ {"06 Jun 2014" : { "ome": [ 200 ], "met": [ 375, 375 ], "enr": [ 225 ], "car": [ 100 ], "cli": [ 200 ] }},
+ -->
+
+<ul ng-controller="EventsController">
+    <li
+      ng-repeat="event in events"
+      ng-controller="EventController as E"
+      ng-init="E.init($index, event)"
+      ng-show="E.hasMeds()"
+      >
+        {"{{ event.date }}": {
+        <span
+          ng-repeat="i in E.meds_indexes"
+          ng-show="E.hasDosage(i)"
+          >
+            "{{ E.meds[i].id }}":
+            [
+            <span ng-repeat="dose in E.getMed(i) track by $index">
+                {{ dose }}
+                <span ng-show=" !$last ">,</span>
+            </span>
+            ] ,
+        </span>
+        "": ""} },
+    </li>
+</ul>
