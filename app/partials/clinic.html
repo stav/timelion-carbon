@@ -1,4 +1,4 @@
 <span class="badge"
-    ng-class="{'miceli-clinic': E.atMiceli(), 'other-clinic': !E.atMiceli()}"
-    ng-bind="event.clinic"
+	ng-bind="event.clinic"
+	ng-class="{'miceli-clinic': event.clinic === 'M'}"
 ></span>

@@ -23,21 +23,13 @@ controller('EventsController', function ($scope, EventsDataService) {
 /* Event */
 
 controller('EventController', function ($scope) {
-  var self = this;
   $scope.abs = Math.abs
 
   this.init = function (index, event) {
     this.prpday = index - 100;
     this.day = index - 1;
     this.week = Math.floor((this.day - 1) / 7) + 1;
-    this.meds = event.meds;
-    this._clinic = event.clinic;
-  };
-  this.atMiceli = function () {
-    return this._clinic === "M";
-  };
-  this.hasMeds = function () {
-    return !$.isEmptyObject(this.meds);
+    this.hasMeds = !$.isEmptyObject(event.meds)
   };
 }).
 
