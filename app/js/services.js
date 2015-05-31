@@ -57,10 +57,11 @@ function events_data_service ( self ) {
     var
         events = new Events(),
         dates = [],
-        date_locale = 'en-GB',
+        date_locale = {},
         date_options = { year: 'numeric',
                          month: 'short',
-                         day: 'numeric'};
+                         day: 'numeric',
+                         weekday: 'short'};
 
     $.each( range( days_long ), function( index, value ) {
         var date = new Date( start_date.getTime());

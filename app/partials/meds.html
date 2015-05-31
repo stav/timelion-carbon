@@ -1,13 +1,13 @@
 <p class="page-header"> Meds </p>
 
 <table class="table table-striped table-hover">
-    <thead ng-controller="MedController" tc-col-labels type="meds"></thead>
+    <thead ng-controller="MedController" tc-col-labels type="meds-h"></thead>
     <tbody ng-controller="EventsController">
         <tr
           ng-repeat="event in events"
           ng-controller="EventController as E"
           ng-init="E.init($index, event)"
-          ng-attr-title="{{ event.notes }}"
+          ng-attr-title="{{ E.hasMeds() ? event.notes : '' }}"
           >
             <td ng-include="'partials/days.html'" align="right"></td>
             <td ng-include="'partials/glyphs.html'"></td>
@@ -15,19 +15,17 @@
             <td ng-include="'partials/clinics.html'" class="clinics"></td>
             <td ng-show="!E.hasMeds()" ng-bind-html="event.notes | rawHtml" colspan="{{ E.meds.length }}" class="notes"></td>
             <td ng-show="E.hasMeds()" ng-repeat="med in E.meds" class="meds">
-                <span>
-                    <span
-                      ng-repeat="dose in E.event.meds[ med['id']] track by $index"
-                      ng-bind="abs( dose )"
-                      ng-attr-title="{{ abs( dose ) + ' ' + med.unit + ' ' + med.name }}"
-                      ng-class="{'label-primary': dose > 0, 'label-default': dose < 0}"
-                      class="label"
-                      ></span>
-                </span>
+                <span
+                  ng-repeat="dose in E.event.meds[ med['id']] track by $index"
+                  ng-bind="abs( dose )"
+                  ng-attr-title="{{ abs( dose ) + ' ' + med.unit + ' ' + med.name }}"
+                  ng-class="{'label-primary': dose > 0, 'label-default': dose < 0}"
+                  class="label"
+                  ></span>
             </td>
         </tr>
     </tbody>
-    <tfoot ng-controller="MedController" tc-col-labels type="meds"></tfoot>
+    <tfoot ng-controller="MedController" tc-col-labels type="meds-f"></tfoot>
 </table>
 
 <tc-legend observers extranotes></tc-legend>

@@ -1,0 +1,27 @@
+<tr>
+    <th style="text-align: right" > Day/Wk </th>
+    <th                           >        </th>
+    <th style="text-align: center"> Date   </th>
+    <th                           > Clinic </th>
+    <th style="text-align: center"
+      ng-repeat="med in meds"
+      bs-popover
+      ><span
+        data-container="th"
+        data-original-title="{{ med.name }}"
+        data-placement="top"
+        data-toggle="tooltip"
+        ><button
+          type="button"
+          class="btn btn-default"
+          data-container="tr"
+          data-content="<p>{{ med.pron }}</p> <ul><li><med>{{ med.bran }}</med></ul> <p>{{ med.html }}</p>"
+          data-html="true"
+          data-original-title="<h2><a href='{{ med.link }}'>{{ med.name }}</a></h2>"
+          data-placement="top"
+          data-toggle="popover"
+          ng-bind="med.name.substr(0,5)"
+        ></button>
+      </span>
+    </th>
+</tr>

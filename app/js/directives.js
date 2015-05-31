@@ -23,7 +23,7 @@ directive('tcColLabels', function () {
         restrict: 'A',
         templateUrl: function ( element, attr ) {
             var type = attr.type || 'default';
-            return 'partials/tablerow-'+ type +'.html'
+            return 'partials/tr-'+ type +'.html'
         }
     };
 }).
