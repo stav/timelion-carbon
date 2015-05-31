@@ -34,7 +34,7 @@
           ng-show="event.notes"
           >
             <td align="right">
-                <span ng-bind="event.day" ng-show="event.day > 0" title="{{ event.day }} Days after initial surgury" class="badge"></span>
+                <span ng-bind="E.day" ng-show="E.day > 0" title="{{ E.day }} Days after initial surgury" class="badge"></span>
             </td>
             <td class="event-date" ng-bind="event.date"></td>
             <td class="notes" ng-bind-html="event.notes | rawHtml"></td>

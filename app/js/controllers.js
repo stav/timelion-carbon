@@ -22,26 +22,22 @@ controller('EventsController', function ($scope, EventsDataService) {
 
 /* Event */
 
-controller('EventController', function ($scope, MedsDataService) {
+controller('EventController', function ($scope) {
   var self = this;
-  self.meds = [];
   $scope.abs = Math.abs
 
-  MedsDataService.success(function (data) {
-    self.meds = data;
-  });
-
   this.init = function (index, event) {
-    event.prpday = index - 100;
-    event.day = index - 1;
-    event.week = Math.floor((event.day - 1) / 7) + 1;
-    this.event = event;
+    this.prpday = index - 100;
+    this.day = index - 1;
+    this.week = Math.floor((this.day - 1) / 7) + 1;
+    this.meds = event.meds;
+    this._clinic = event.clinic;
   };
   this.atMiceli = function () {
-    return this.event.clinic === "M";
+    return this._clinic === "M";
   };
   this.hasMeds = function () {
-    return !$.isEmptyObject(this.event.meds);
+    return !$.isEmptyObject(this.meds);
   };
 }).
 
