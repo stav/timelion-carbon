@@ -18,7 +18,6 @@ module('myApp', [
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
   $routeProvider.when('/home',                    {templateUrl: 'partials/home.html'});
   $routeProvider.when('/meds',                    {templateUrl: 'partials/meds.html'});
-  $routeProvider.when('/medsgen',                 {templateUrl: 'partials/meds.gen.html'});
   $routeProvider.when('/xrays',                   {templateUrl: 'partials/xrays.html'});
   $routeProvider.when('/notes',                   {templateUrl: 'partials/notes.html'});
   $routeProvider.when('/costs',                   {redirectTo: '/file/costs'});

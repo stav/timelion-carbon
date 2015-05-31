@@ -25,52 +25,23 @@ controller('EventsController', function ($scope, EventsDataService) {
 controller('EventController', function ($scope, MedsDataService) {
   var self = this;
   self.meds = [];
-  self.meds_indexes = [];
+  $scope.abs = Math.abs
 
   MedsDataService.success(function (data) {
     self.meds = data;
-    // Create array of integers of the data indexes, e.g. [1, 2, 3, 4, 5, 6, 7]
-    var index = data.length;
-    while (index) self.meds_indexes[--index] = index;
   });
 
   this.init = function (index, event) {
     event.prpday = index - 100;
     event.day = index - 1;
     event.week = Math.floor((event.day - 1) / 7) + 1;
-    // "badge B{{ Math.floor((event.day - 1) / 30 + 1) % 7 }}"
     this.event = event;
-  };
-  this.getMed = function (med) {
-    return this.event.meds.length > med ? this.event.meds[med] : [];
   };
   this.atMiceli = function () {
     return this.event.clinic === "M";
   };
   this.hasMeds = function () {
-    // if (!angular.isArray(this.event.meds)) return false;
-    // if (!this.event.meds.length) return false;
-    for (var i = 0; i < this.event.meds.length; i++) {
-      // if (!angular.isArray(this.event.meds[i])) return false;
-      if (this.event.meds[i].length > 0) return true;
-    }
-    return false;
-  };
-  this.hasDosage = function (med) {
-    return this.getMed(med).length > 0;
-  };
-  this.getMedsRange = function (med) {
-    return new Array(Math.abs(this.getMed(med)));
-  };
-  this.observed = function (med, batch) {
-    return this.getMed(med)[batch] > 0;
-  };
-  this.unobserved = function (med, batch) {
-    return this.getMed(med)[batch] < 0;
-  };
-  this.med = function (med, dose) {
-    if (med in self.meds)
-      return '' + Math.abs(dose) + ' ' + self.meds[med].unit;
+    return !$.isEmptyObject(this.event.meds);
   };
 }).
 

@@ -2,7 +2,7 @@
 
 var
 
-    version = '0.3.3',
+    version = '0.3.4',
     days_long = 373,
     start_date = new Date(2014, 4, 31);
 
@@ -94,7 +94,7 @@ function events_data_service ( self ) {
             date: date.toLocaleDateString(date_locale, date_options),
             clinic: "",
             notes: "",
-            meds: []
+            meds: {}
         };
     });
 

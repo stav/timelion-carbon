@@ -51,14 +51,14 @@
 .table td.notes, .table td.meds {
   white-space: inherit;
 }
+.table td.meds {
+  text-align: center;
+}
 .table td.event-date {
   text-align: right;
 }
 .table td.clinics {
   text-align: center;
-}
-.table caption {
-  font-size: 2em;
 }
 
 /* grid*/
