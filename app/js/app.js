@@ -3,14 +3,14 @@ angular.
 
 // Declare app level module with dependencies
 
-module('myApp', [
+module('tcCarbon', [
   'ngGrid',
   'ngRoute',
-  'myApp.utils',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
+  'tcCarbon.utils',
+  'tcCarbon.filters',
+  'tcCarbon.services',
+  'tcCarbon.directives',
+  'tcCarbon.controllers'
 ]).
 
 // Route configuration

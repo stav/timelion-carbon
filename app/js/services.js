@@ -8,7 +8,7 @@ var
 
 angular.
 
-module('myApp.services', ['myApp.utils']).
+module('tcCarbon.services', ['tcCarbon.utils']).
 
 /* Constants */
 

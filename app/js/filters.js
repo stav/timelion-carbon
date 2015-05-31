@@ -2,7 +2,7 @@
 
 angular.
 
-module('myApp.filters', []).
+module('tcCarbon.filters', []).
 
 /* Filters */
 

@@ -2,7 +2,7 @@
 
 angular.
 
-module('myApp.directives', []).
+module('tcCarbon.directives', []).
 
 /* Directives */
 

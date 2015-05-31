@@ -1,6 +1,6 @@
 'use strict';
 angular.
-module('myApp.controllers', []).
+module('tcCarbon.controllers', []).
 
 /* Controllers */
 
@@ -14,7 +14,7 @@ controller('MedController', function ($scope, MedsDataService) {
   });
 }).
 
-/* Evemts */
+/* Events */
 
 controller('EventsController', function ($scope, EventsDataService) {
   $scope.events = EventsDataService.events;
