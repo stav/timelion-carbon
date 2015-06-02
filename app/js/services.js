@@ -108,7 +108,12 @@ function events_data_service ( self ) {
     // re-order events object into events array
     $.each( dates, function( index, date ) {
         if ( date in events ) {
-            self.events.push( events[ date ] );
+            event = events[ date ];
+            event.prpday = index - 100;
+            event.day = index - 1;
+            event.week = Math.floor((event.day - 1) / 7) + 1;
+            event.hasMeds = !$.isEmptyObject(event.meds);
+            self.events.push( event );
         }
     });
 }

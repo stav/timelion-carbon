@@ -29,12 +29,14 @@
     <tbody ng-controller="EventsController">
         <tr
           ng-repeat="event in events"
-          ng-controller="EventController as E"
-          ng-init="E.init($index, event)"
           ng-show="event.notes"
           >
             <td align="right">
-                <span ng-bind="E.day" ng-show="E.day > 0" title="{{ E.day }} Days after initial surgury" class="badge"></span>
+                <span class="badge"
+                    ng-bind="event.day"
+                    ng-show="event.day > 0"
+                    ng-attr-title="{{ event.day }} Days after initial surgury"
+                ></span>
             </td>
             <td class="event-date" ng-bind="event.date"></td>
             <td class="notes" ng-bind-html="event.notes | rawHtml"></td>

@@ -5,22 +5,19 @@
     <tbody ng-controller="EventsController">
         <tr
           ng-repeat="event in events"
-          ng-controller="EventController as E"
-          ng-init="E.init($index, event)"
-          ng-attr-title="{{ E.hasMeds ? event.notes : '' }}"
+          ng-attr-title="{{ event.hasMeds ? event.notes : '' }}"
           >
             <td ng-include="'partials/days.html'" align="right"></td>
             <td ng-include="'partials/glyphs.html'"></td>
             <td ng-bind="event.date" class="event-date"></td>
             <td ng-include="'partials/clinic.html'" class="clinics"></td>
-            <td ng-show="!E.hasMeds" ng-bind-html="event.notes | rawHtml" colspan="{{ meds.length }}" class="notes"></td>
-            <td ng-show="E.hasMeds" ng-repeat="med in meds" class="meds">
-                <span
+            <td ng-show="!event.hasMeds" ng-bind-html="event.notes | rawHtml" colspan="{{ meds.length }}" class="notes"></td>
+            <td ng-show="event.hasMeds" ng-repeat="med in meds" class="meds">
+                <span class="label"
                   ng-repeat="dose in event.meds[ med['id']] track by $index"
                   ng-bind="abs( dose )"
                   ng-attr-title="{{ abs( dose ) + ' ' + med.unit + ' ' + med.name }}"
                   ng-class="{'label-primary': dose > 0, 'label-default': dose < 0}"
-                  class="label"
                   ></span>
             </td>
         </tr>

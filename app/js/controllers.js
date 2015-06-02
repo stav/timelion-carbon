@@ -10,27 +10,15 @@ controller('MedController', function ($scope, MedsDataService) {
   $scope.meds = [];
 
   MedsDataService.success(function (data) {
-    $scope.meds = data; //.splice(0, 1);
+    $scope.meds = data;
   });
 }).
 
 /* Events */
 
 controller('EventsController', function ($scope, EventsDataService) {
-  $scope.events = EventsDataService.events;
-}).
-
-/* Event */
-
-controller('EventController', function ($scope) {
   $scope.abs = Math.abs
-
-  this.init = function (index, event) {
-    this.prpday = index - 100;
-    this.day = index - 1;
-    this.week = Math.floor((this.day - 1) / 7) + 1;
-    this.hasMeds = !$.isEmptyObject(event.meds)
-  };
+  $scope.events = EventsDataService.events;
 }).
 
 /* Date File */

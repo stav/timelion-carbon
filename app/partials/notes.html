@@ -5,8 +5,6 @@
     <tbody ng-controller="EventsController">
         <tr
           ng-repeat="event in events"
-          ng-controller="EventController as E"
-          ng-init="E.init($index, event)"
           ng-show="event.notes"
           >
             <td ng-include="'partials/days.html'" align="right"></td>
