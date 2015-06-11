@@ -63,7 +63,7 @@ function events_data_service ( self ) {
                          day: 'numeric',
                          weekday: 'short'};
 
-    $.each( range( days_long ), function( index, value ) {
+    jQuery.each( range( days_long ), function( index, value ) {
         var date = new Date( start_date.getTime());
         date.setDate( start_date.getDate() + value );
         dates.push( date );
@@ -75,7 +75,7 @@ function events_data_service ( self ) {
          * @name: String - The individual event name of the collection
          * @collection: Array - date/clinic mapping
          */
-            $.each( collection, function( i, o ) {
+            jQuery.each( collection, function( i, o ) {
                 var date_string = Object.keys( o )[0],
                     value = o[ date_string ],
                     date = new Date( date_string );
@@ -105,14 +105,14 @@ function events_data_service ( self ) {
           .set('meds', self.meds)
           ;
 
-    // re-order events object into events array
-    $.each( dates, function( index, date ) {
+    // re-order events object as an events array
+    jQuery.each( dates, function( index, date ) {
         if ( date in events ) {
             event = events[ date ];
             event.prpday = index - 100;
             event.day = index - 1;
             event.week = Math.floor((event.day - 1) / 7) + 1;
-            event.hasMeds = !$.isEmptyObject(event.meds);
+            event.hasMeds = !jQuery.isEmptyObject(event.meds);
             self.events.push( event );
         }
     });
