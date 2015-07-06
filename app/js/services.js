@@ -2,7 +2,7 @@
 
 var
 
-    version = '0.3.4',
+    version = '0.3.5',
     days_long = 373,
     start_date = new Date(2014, 4, 31);
 
