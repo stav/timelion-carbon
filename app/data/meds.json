@@ -60,6 +60,26 @@
       "html": "An <u>antibiotic</u> useful for the treatment of a number of infections. It is of the lincosamide class. It is usually used to treat infections with <u>anaerobic bacteria</u>, but can also be used to treat some protozoal diseases, such as malaria. It is a common topical treatment for acne and can be useful against some methicillin-resistant Staphylococcus aureus (MRSA) infections."
     },
     {
+      "id"  : "cef",
+      "name": "Cefalexin",
+      "alte": "Cefalexin",
+      "unit": "mg",
+      "pron": "/ˌsɛfəˈlɛksɨn/",
+      "bran": "",
+      "link": "https://en.wikipedia.org/wiki/Cefalexin",
+      "html": "An <u>antibiotic</u> that can treat a number of bacterial infections. It kills gram-positive and some gram-negative bacteria by disrupting the growth of the bacterial cell wall. Cefalexin can treat certain bacterial infections, including those of the middle ear, bone and joint, skin, and urinary tract. It may also be used for certain types of pneumonia, strep throat, and to prevent bacterial endocarditis. Cefalexin is not effective against infections caused by methicillin-resistant Staphylococcus aureus (MRSA), Enterococcus, or Pseudomonas. Like other antibiotics, cefalexin cannot treat viral infections, such as the flu, common cold or acute bronchitis. "
+    },
+    {
+      "id"  : "mel",
+      "name": "Meloxicam",
+      "alte": "Meloxicam",
+      "unit": "mg",
+      "pron": "",
+      "bran": "",
+      "link": "https://en.wikipedia.org/wiki/Meloxicam",
+      "html": "Meloxicam is a <u>nonsteroidal anti-inflammatory drug (NSAID)</u> with analgesic and fever reducer effects. It is a derivative of oxicam, closely related to piroxicam, and falls in the enolic acid group of NSAIDs. Meloxicam inhibits cyclooxygenase (COX), the enzyme responsible for converting arachidonic acid into prostaglandin H2 — the first step in the synthesis of prostaglandins, which are mediators of inflammation. Meloxicam has been shown, especially at its low therapeutic doses, selectively to inhibit COX-2 over COX-1"
+    },
+    {
       "id"  : "bor",
       "name": "Boron",
       "alte": "Tri-Boron",
@@ -99,5 +119,22 @@
       "bran": "GNC",
       "unit": "",
       "html": "Curcuma 600 mg, Bromelin 300 mg<p>Before 25 Jan 2015, Sheeps was using home-made capsulas"
+    },
+    {
+      "id"  : "ore",
+      "name": "Wild Oregano Essential Oil",
+      "alte": "Curcuma & Bromelin",
+      "bran": "Oreganol P73",
+      "link": "http://www.northamericanherbandspice.com/product/oreganol-p73-oil-1-fl-oz/",
+      "unit": "",
+      "html": "The most well-known benefit of oregano P73 is its microbial killing powers. It has prevailed when tested against a variety of microorganisms and infections. It is superior to prescription medicine in its ability to prevent the spread or growth of various types of bacteria. Its fungus-fighting properties help to destroy fungi almost immediately. Oil of oregano can also act as a food preservative by extending the shelf life of most foods, thereby reducing the risk of food poisoning in meats and poultry."
+    },
+    {
+      "id"  : "syr",
+      "name": "Honey and herbs cough syrup",
+      "alte": "",
+      "bran": "",
+      "unit": "ml",
+      "html": "Homemade syrup with organic honey and Primavera food grade essential oils (lemon, eucalyptus, clove, rosmary) as well as Oreganol P73. Each time Carbi got his syrup Zo also rubbed Eden's Garden's Four Thieves oil onto his chest."
     }
 ]
