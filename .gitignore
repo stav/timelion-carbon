@@ -1,7 +1,8 @@
-bower_components/
+bower_components
 node_modules/
 misc/
 !.gitkeep
 .DS_Store
 .idea
 tmp
+*.py[co]
