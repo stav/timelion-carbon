@@ -97,9 +97,9 @@
     },
     {
       "id"  : "joi",
-      "name": "Joint Supp.",
+      "name": "Joint Supplement",
       "alte": "Glucosamina, Condroitina, MSM",
-      "unit": "",
+      "unit": "cap",
       "bran": "GNC / TopDog / TriFlex / GlycanAid",
       "html": "On 25 Jan 2015 TriFlex is replaced by GlycanAid from TopDog Chewable Supplement"
     },
@@ -117,23 +117,20 @@
       "name": "Curc/Brom",
       "alte": "Curcuma & Bromelin",
       "bran": "GNC",
-      "unit": "",
+      "unit": "cap",
       "html": "Curcuma 600 mg, Bromelin 300 mg<p>Before 25 Jan 2015, Sheeps was using home-made capsulas"
     },
     {
       "id"  : "ore",
-      "name": "Wild Oregano Essential Oil",
-      "alte": "Curcuma & Bromelin",
+      "name": "Oregano Essential Oil",
       "bran": "Oreganol P73",
       "link": "http://www.northamericanherbandspice.com/product/oreganol-p73-oil-1-fl-oz/",
-      "unit": "",
-      "html": "The most well-known benefit of oregano P73 is its microbial killing powers. It has prevailed when tested against a variety of microorganisms and infections. It is superior to prescription medicine in its ability to prevent the spread or growth of various types of bacteria. Its fungus-fighting properties help to destroy fungi almost immediately. Oil of oregano can also act as a food preservative by extending the shelf life of most foods, thereby reducing the risk of food poisoning in meats and poultry."
+      "unit": "drp",
+      "html": "<h3>Wild Oregano Essential Oil</h3>The most well-known benefit of oregano P73 is its microbial killing powers. It has prevailed when tested against a variety of microorganisms and infections. It is superior to prescription medicine in its ability to prevent the spread or growth of various types of bacteria. Its fungus-fighting properties help to destroy fungi almost immediately. Oil of oregano can also act as a food preservative by extending the shelf life of most foods, thereby reducing the risk of food poisoning in meats and poultry."
     },
     {
       "id"  : "syr",
       "name": "Honey and herbs cough syrup",
-      "alte": "",
-      "bran": "",
       "unit": "ml",
       "html": "Homemade syrup with organic honey and Primavera food grade essential oils (lemon, eucalyptus, clove, rosmary) as well as Oreganol P73. Each time Carbi got his syrup Zo also rubbed Eden's Garden's Four Thieves oil onto his chest."
     }
