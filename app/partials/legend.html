@@ -2,13 +2,17 @@
     <div class="hero-unit">
         <div class="container">
             <p align="center">
-                Visits to clinics:
-                <span class="badge miceli-clinic">M</span> Miceli,
-                <span class="badge beremiz-clinic">B</span> Beremiz,
-                <span class="badge">O</span> Other;
-                Medication:
-                <span ng-show="observers" class="label label-primary">Zosia observed</span>
-                <span ng-show="observers" class="label label-default">Zosia did not observe</span>
+                <span>
+                    Visits to clinics:
+                    <span class="badge miceli-clinic">M</span> Miceli,
+                    <span class="badge beremiz-clinic">B</span> Beremiz,
+                    <span class="badge">O</span> Other
+                </span>
+                <span ng-show="observers">
+                    ; Medication:
+                    <span class="label label-primary">Zosia observed</span>
+                    <span class="label label-default">Zosia did not observe</span>
+                </span>
             </p>
             <p ng-show="extraNotes" class="alert alert-info">
                 <span class="glyphicon glyphicon-hand-right"></span>
