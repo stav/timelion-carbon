@@ -90,5 +90,14 @@
   {"date": "2015 05 18", "desc": "Clindamicina",                    "type": "drug",  "cost":  280.00},
   {"date": "2015 05 18", "desc": "Omeprazol",                       "type": "drug",  "cost":  240.00},
   {"date": "2015 05 22", "desc": "X-ray",                           "type": "vet",   "cost":  250.00},
-  {"date": "2015 05 22", "desc": "Dr. Eugene",                      "type": "vet",   "cost":  150.00}
+  {"date": "2015 05 22", "desc": "Dr. Eugene",                      "type": "vet",   "cost":  150.00},
+
+  {"date": "2015 06 13", "desc": "Rental car: Quotas, gas, motels", "type": "xport", "cost": 4000.00},
+  {"date": "2015 06 13", "desc": "Rental car: Tsuru, 5 days@700/d", "type": "xport", "cost": 3500.00},
+  {"date": "2015 06 15", "desc": "Polanco clinic operation room",   "type": "vet",   "cost": 2500.00},
+  {"date": "2015 06 15", "desc": "Dr. Beremiz, titanium plate",     "type": "vet",   "cost": 7900.00},
+  {"date": "2015 06 29", "desc": "Go to DF bus: Quotas gas motels", "type": "xport", "cost": 4000.00},
+  {"date": "2015 06 30", "desc": "Polanco clinic, 20 days",         "type": "vet",   "cost": 8080.00},
+
+  {"date": "2015 07 17", "desc": "Fernanda diagnosis & rehab",      "type": "vet",   "cost":  812.00}
 ]
