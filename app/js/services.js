@@ -2,7 +2,7 @@
 
 var
 
-    version = '0.3.5',
+    version = '0.4.0',
     days_long = 450,
     start_date = new Date(2014, 4, 31);
 
@@ -24,16 +24,19 @@ service('EventsDataService', function ( $q, $http ) {
 
     $q.all([
         $http.get('data/events.clinic.json'),
+        $http.get('data/events.xrays.json'),
         $http.get('data/events.note.json'),
         $http.get('data/events.meds.json')
     ]).
     then( function ( responses ) {
         self.clinics = responses[0].data;
-        self.notes = responses[1].data;
-        self.meds = responses[2].data;
+        self.xrays = responses[1].data;
+        self.notes = responses[2].data;
+        self.meds = responses[3].data;
     }).
     catch( function ( data ) {
         self.clinics = null;
+        self.xrays = null;
         self.notes = null;
         self.meds = null;
     }).
@@ -55,6 +58,7 @@ factory('MedsDataService', function ( $http ) {
 
 function events_data_service ( self ) {
     var
+        evnt,
         events = new Events(),
         dates = [],
         date_locale = {},
@@ -62,7 +66,7 @@ function events_data_service ( self ) {
                          month: 'short',
                          day: 'numeric',
                          weekday: 'short'};
-
+    // fill dates array
     jQuery.each( range( days_long ), function( index, value ) {
         var date = new Date( start_date.getTime());
         date.setDate( start_date.getDate() + value );
@@ -94,6 +98,7 @@ function events_data_service ( self ) {
         events[ date ] = {
             date: date.toLocaleDateString(date_locale, date_options),
             clinic: "",
+            xrays: "",
             notes: "",
             meds: {}
         };
@@ -101,6 +106,7 @@ function events_data_service ( self ) {
 
     // update events object with our data
     events.set('clinic', self.clinics)
+          .set('xrays', self.xrays)
           .set('notes', self.notes)
           .set('meds', self.meds)
           ;
@@ -108,12 +114,12 @@ function events_data_service ( self ) {
     // re-order events object as an events array
     jQuery.each( dates, function( index, date ) {
         if ( date in events ) {
-            event = events[ date ];
-            event.prpday = index - 100;
-            event.day = index - 1;
-            event.week = Math.floor((event.day - 1) / 7) + 1;
-            event.hasMeds = !jQuery.isEmptyObject(event.meds);
-            self.events.push( event );
+            evnt = events[ date ];
+            evnt.prpday = index - 100;
+            evnt.day = index - 1;
+            evnt.week = Math.floor(( evnt.day - 1 ) / 7 ) + 1;
+            evnt.hasMeds = !jQuery.isEmptyObject( evnt.meds );
+            self.events.push( evnt );
         }
     });
 }

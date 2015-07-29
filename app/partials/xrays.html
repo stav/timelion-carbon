@@ -1,55 +1,33 @@
 <p class="page-header"> X-rays </p>
 
-<div id="links">
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.05.31.jpg"                 ><img alt="X-ray" title="2014.05.31" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.05.31.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.06.02_1.jpg"               ><img alt="X-ray" title="2014.06.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.06.02_1.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.06.02_2.jpg"               ><img alt="X-ray" title="2014.06.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.06.02_2.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.06.23.jpg"                 ><img alt="X-ray" title="2014.06.23" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.06.23.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.08.01.jpg"                 ><img alt="X-ray" title="2014.08.01" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.08.01.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.08.20.jpg"                 ><img alt="X-ray" title="2014.08.20" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.08.20.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.09.11.jpg"                 ><img alt="X-ray" title="2014.09.11" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.09.11.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.09.11_after-op.jpg"        ><img alt="X-ray" title="2014.09.11" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.09.11_after-op.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.10.02.jpg"                 ><img alt="X-ray" title="2014.10.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.10.02.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.10.11.jpg"                 ><img alt="X-ray" title="2014.10.11" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.10.11.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.10.11_side.jpg"            ><img alt="X-ray" title="2014.10.11" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2014.10.11_side.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.02.02_checkup-united.jpg"  ><img alt="X-ray" title="2015.02.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.02.02_checkup-united.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.02.02_checkup-united_2.jpg"><img alt="X-ray" title="2015.02.02" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.02.02_checkup-united_2.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.04.20.jpg"                 ><img alt="X-ray" title="2015.04.20" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.04.20.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.04.20_.jpg"                ><img alt="X-ray" title="2015.04.20" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.04.20_.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.05.22.jpg"                 ><img alt="X-ray" title="2015.05.22" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-2015.05.22.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-20150628-WA0000.jpg"            ><img alt="X-ray" title="2015.06.28" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-20150628-WA0000.jpg"></a>
-    <a data-gallery href="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-20150628-WA0001.jpg"            ><img alt="X-ray" title="2015.06.28" src="http://centerstar.org/carbon-images/xrays/Carbon-radiografia-20150628-WA0001.jpg"></a>
-</div>
-
 <table class="table table-striped table-hover table-notes container">
-    <thead ng-controller="MedController" tc-col-labels></thead>
+    <thead ng-controller="MedController" tc-col-labels type="xrays"></thead>
     <tbody ng-controller="EventsController">
         <tr
           ng-repeat="event in events"
-          ng-show="event.notes | xRay"
+          ng-show="event.xrays"
           >
             <td ng-include="'partials/days.html'" align="right"></td>
-            <td ng-include="'partials/glyphs.html'"></td>
             <td ng-bind="event.date" class="event-date"></td>
             <td ng-include="'partials/clinic.html'" class="clinics"></td>
+            <td class="xray">
+                <a data-gallery href="{{ event.xrays }}">
+                    <img alt="X-ray" src="{{ event.xrays }}">
+                </a>
+            </td>
             <td ng-bind-html="event.notes | rawHtml" class="notes"></td>
         </tr>
     </tbody>
-    <tfoot ng-controller="MedController" tc-col-labels></tfoot>
+    <tfoot ng-controller="MedController" tc-col-labels type="xrays"></tfoot>
 </table>
 
 <tc-legend></tc-legend>
 
 <style type="text/css">
-    #links {
-        text-align: center;
-    }
-    #links img {
-        width: 5%;
-        padding: 5px;
+    .xray img {
+        width: 100px;
     }
 </style>
-
 
 <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" >
