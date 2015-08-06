@@ -60,6 +60,16 @@
       "html": "An <u>antibiotic</u> useful for the treatment of a number of infections. It is of the lincosamide class. It is usually used to treat infections with <u>anaerobic bacteria</u>, but can also be used to treat some protozoal diseases, such as malaria. It is a common topical treatment for acne and can be useful against some methicillin-resistant Staphylococcus aureus (MRSA) infections."
     },
     {
+      "id"  : "dox",
+      "name": "Doxycycline",
+      "alte": "Doxiciclina",
+      "unit": "mg",
+      "pron": "/ˌdɒksiˈsaɪklin/",
+      "bran": "Holland Spectrum",
+      "link": "https://en.wikipedia.org/wiki/Doxycycline",
+      "html": "A broad-spectrum <u>antibiotic</u> antibiotic of the tetracycline class that is useful for the treatment of a number of infections, including bacterial, protozoal and helminth. In addition to the general indications for all members of the tetracycline antibiotics group, doxycycline is frequently used to treat Lyme disease, chronic prostatitis, sinusitis, pelvic inflammatory disease,[4][5] acne, rosacea,[6][7] and rickettsial infections."
+    },
+    {
       "id"  : "cef",
       "name": "Cefalexin",
       "alte": "Cefalexin",

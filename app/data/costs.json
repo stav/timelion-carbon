@@ -99,5 +99,19 @@
   {"date": "2015 06 29", "desc": "Go to DF bus: Quotas gas motels", "type": "xport", "cost": 4000.00},
   {"date": "2015 06 30", "desc": "Polanco clinic, 20 days",         "type": "vet",   "cost": 8080.00},
 
-  {"date": "2015 07 17", "desc": "Fernanda diagnosis & rehab",      "type": "vet",   "cost":  812.00}
+  {"date": "2015 07 13", "desc": "Dr. Beremiz - house visit",       "type": "vet",   "cost":  500.00},
+  {"date": "2015 07 17", "desc": "Dr. Fernanda diagnosis & rehab",  "type": "vet",   "cost":  812.00},
+  {"date": "2015 07 20", "desc": "Dr. Fernanda rehab",              "type": "vet",   "cost":  450.00},
+  {"date": "2015 07 22", "desc": "Dr. Fernanda rehab",              "type": "vet",   "cost":  360.00},
+  {"date": "2015 07 24", "desc": "Dr. Fernanda rehab",              "type": "vet",   "cost":  360.00},
+  {"date": "2015 07 28", "desc": "Dr. Fernanda rehab",              "type": "vet",   "cost":  360.00},
+  {"date": "2015 07 30", "desc": "Dr. Fernanda rehab",              "type": "vet",   "cost":  360.00},
+
+  {"date": "2015 08 05", "desc": "UVM PrP procedure",               "type": "vet",   "cost": 1276.00},
+  {"date": "2015 08 05", "desc": "UVM medication",                  "type": "drug",  "cost":   53.00},
+  {"date": "2015 08 05", "desc": "UVM X-ray",                       "type": "vet",   "cost":  522.00},
+  {"date": "2015 08 05", "desc": "UVM X-ray",                       "type": "vet",   "cost":  522.00},
+  {"date": "2015 08 05", "desc": "UVM Advantix",                    "type": "drug",  "cost":  188.00},
+  {"date": "2015 08 05", "desc": "UVM Doxiciclina",                 "type": "drug",  "cost":  159.00},
+  {"date": "2015 08 05", "desc": "UVM Operation moving the screw",  "type": "vet",   "cost": 1500.00}
 ]
