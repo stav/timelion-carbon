@@ -17,7 +17,7 @@ filter('xRayEvents', [function() {
   return function( events ) {
     var xray_events = Array();
     angular.forEach( events, function( evnt ) {
-        if ( evnt.xrays )
+        if ( evnt.xrays.length )
             xray_events.push( evnt );
     });
     return xray_events;

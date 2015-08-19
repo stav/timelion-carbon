@@ -83,8 +83,12 @@ function events_data_service ( self ) {
                 var date_string = Object.keys( o )[0],
                     value = o[ date_string ],
                     date = new Date( date_string );
-                if ( date in events )
-                    events[ date ][ name ] = value;
+                if ( date in events ) {
+                    if ( angular.isArray( events[ date ][ name ] ) )
+                        events[ date ][ name ].push( value );
+                    else
+                        events[ date ][ name ] = value;
+                }
                 // else
                 //     console.log('Error: ' +
                 //         date + ' not found for ' + name);
@@ -98,7 +102,7 @@ function events_data_service ( self ) {
         events[ date ] = {
             date: date.toLocaleDateString(date_locale, date_options),
             clinic: "",
-            xrays: "",
+            xrays: [],
             notes: "",
             meds: {}
         };

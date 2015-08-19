@@ -11,9 +11,11 @@
             <td ng-bind="event.date" class="event-date"></td>
             <td ng-include="'partials/clinic.html'" class="clinics"></td>
             <td class="xray">
-                <a data-gallery href="{{ event.xrays }}">
-                    <img alt="X-ray" src="{{ event.xrays }}">
-                </a>
+                <span ng-repeat="xray in event.xrays">
+                    <a data-gallery href="{{ xray }}">
+                        <img alt="X-ray" src="{{ xray }}">
+                    </a>
+                </span>
             </td>
             <td ng-bind-html="event.notes | rawHtml" class="notes"></td>
         </tr>
