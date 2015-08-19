@@ -10,10 +10,16 @@ filter('rawHtml', ['$sce', function( $sce ){
   return function( value ) {
     return $sce.trustAsHtml( value );
   };
-// }]).
+}]).
 
-// filter('xRay', [function() {
-//   return function( note ) {
-//     return note.indexOf('Carbon-radiografia') > -1;
-//   };
+filter('xRayEvents', [function() {
+  // return only events with xrays
+  return function( events ) {
+    var xray_events = Array();
+    angular.forEach( events, function( evnt ) {
+        if ( evnt.xrays )
+            xray_events.push( evnt );
+    });
+    return xray_events;
+  };
 }]);
