@@ -113,5 +113,9 @@
   {"date": "2015 08 05", "desc": "UVM X-ray",                       "type": "vet",   "cost":  522.00},
   {"date": "2015 08 05", "desc": "UVM Advantix",                    "type": "drug",  "cost":  188.00},
   {"date": "2015 08 05", "desc": "UVM Doxiciclina",                 "type": "drug",  "cost":  159.00},
-  {"date": "2015 08 05", "desc": "UVM Operation moving the screw",  "type": "vet",   "cost": 1500.00}
+  {"date": "2015 08 05", "desc": "UVM Operation moving the screw",  "type": "vet",   "cost": 1500.00},
+  {"date": "2015 08 28", "desc": "UVM rehab - prepay 5 visis",      "type": "vet",   "cost": 1800.00},
+
+  {"date": "2015 09 10", "desc": "UVM X-ray",                       "type": "vet",   "cost":  522.00},
+  {"date": "2015 09 10", "desc": "Dr. Beremiz consulta",            "type": "vet",   "cost":  500.00}
 ]
