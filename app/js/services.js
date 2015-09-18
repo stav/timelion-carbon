@@ -119,7 +119,6 @@ function events_data_service ( self ) {
     jQuery.each( dates, function( index, date ) {
         if ( date in events ) {
             evnt = events[ date ];
-            evnt.prpday = index - 100;
             evnt.day = index - 1;
             evnt.week = Math.floor(( evnt.day - 1 ) / 7 ) + 1;
             evnt.hasMeds = !jQuery.isEmptyObject( evnt.meds );
