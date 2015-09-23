@@ -20,6 +20,8 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
   $routeProvider.when('/meds',                    {templateUrl: 'partials/meds.html'});
   $routeProvider.when('/xrays',                   {templateUrl: 'partials/xrays.html'});
   $routeProvider.when('/notes',                   {templateUrl: 'partials/notes.html'});
+  $routeProvider.when('/video',                   {templateUrl: 'partials/video.html'});
+  $routeProvider.when('/stats',                   {templateUrl: 'partials/stats.html'});
   $routeProvider.when('/costs',                   {redirectTo: '/file/costs'});
   $routeProvider.when('/file/:file',              {templateUrl: 'partials/costs.html', controller: 'DataFileController'});
   // $routeProvider.when('/file/:file/files/:files', {templateUrl: 'partials/ngGrid.html', controller: 'DataFileController'});
